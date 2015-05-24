@@ -1,0 +1,213 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx-2.0.xsd">
+
+	<context:component-scan base-package="ar.com.indexer.controllers" />
+	<mvc:annotation-driven />
+
+
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/pdfindexer" />
+		<!-- <property name="username" value="root" /> -->
+		<!-- <property name="password" value="root" /> -->
+		<property name="username" value="pdfIndexer" />
+		<property name="password" value="YKu4cqfXWM7TxaXK" />
+	</bean>
+
+
+
+	<!-- //probando propertys -->
+	<context:property-placeholder location="resources/carpetas.properties" />
+	<!-- fin probando propertis -->
+
+
+	<bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location">
+			<value>resources/carpetas.properties</value>
+		</property>
+	</bean>
+
+	<bean id="configuracion" class="ar.com.indexer.configuracion.Configuracion">
+		<property name="PATH_BASE" value="${path.base}"></property>
+		<property name="PATH_TEMP" value="${path.temp}"></property>
+	</bean>
+
+	<bean id="archivosController" class="ar.com.indexer.controllers.ArchivosController">
+		<property name="archivosBO" ref="archivosBO" />
+		<property name="conf" ref="configuracion"></property>
+	</bean>
+
+	<bean id="ajaxController" class="ar.com.indexer.controllers.AjaxController">
+		<property name="conf" ref="configuracion"></property>
+		<property name="usuarioBO" ref="usuarioBO" />
+		<property name="usuarioDTO" ref="usuarioDTO"></property>
+		<property name="codigosBO" ref="codigosBO"></property>
+	</bean>
+
+
+
+
+
+	<bean id="txManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<tx:annotation-driven transaction-manager="txManager" />
+
+
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+
+	<bean id="confPdfDTO" class="ar.com.indexer.dto.ConfPdfDTO">
+	</bean>
+
+
+	<bean id="usuarioController" class="ar.com.indexer.controllers.UsuarioController">
+		<property name="usuarioDTO" ref="usuarioDTO" />
+		<property name="usuarioBO" ref="usuarioBO" />
+
+	</bean>
+
+	<bean id="pdfController" class="ar.com.indexer.controllers.PdfController">
+		<property name="confPdfDTO" ref="confPdfDTO" />
+		<property name="corta" ref="cortaPaginas" />
+		<property name="busquedaBO" ref="busquedaBO"></property>
+		<property name="usuarioDTO" ref="usuarioDTO"></property>
+		<property name="conf" ref="configuracion" />
+	</bean>
+
+	<bean id="codigosDAO" class="ar.com.indexer.dao.CodigosDAO">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+
+	</bean>
+	<bean id="codigosBO" class="ar.com.indexer.bo.CodigosBO">
+
+		<property name="codigosDAO" ref="codigosDAO" />
+		<property name="usuarioBO" ref="usuarioBO"></property>
+	</bean>
+
+	<bean id="clavesController" class="ar.com.indexer.controllers.ClavesController">
+		<property name="codigosBO" ref="codigosBO"></property>
+		<property name="usuarioBO" ref="usuarioBO"></property>
+	</bean>
+
+
+	<bean id="cortaPaginas" class="ar.com.indexer.paginador.CortaPaginas">
+		<property name="conf" ref="configuracion"></property>
+	</bean>
+
+
+
+	<bean id="usuarioDTO" class="ar.com.indexer.dto.UsuarioDTO">
+	</bean>
+
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix">
+			<value>/WEB-INF/jsp/</value>
+		</property>
+		<property name="suffix">
+			<value>.jsp</value>
+		</property>
+	</bean>
+
+
+
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
+
+
+	<bean id="fileValidator" class="ar.com.indexer.upload.FileValidator" />
+
+	<bean id="busquedaActual" class="ar.com.indexer.servicios.BusquedaActual" />
+
+	<bean id="fileUploadController" class="ar.com.indexer.controllers.FileUploadController">
+
+		<property name="conf" ref="configuracion"></property>
+
+	</bean>
+
+
+	<bean id="mainController" class="ar.com.indexer.controllers.MainController">
+		<property name="busquedaActual" ref="busquedaActual"></property>
+		<!-- <property name="taskExecutor" ref="taskExecutor"></property> -->
+		<property name="busquedaBO" ref="busquedaBO"></property>
+		<property name="confPdfDTO" ref="confPdfDTO" />
+		<property name="usuarioBO" ref="usuarioBO"></property>
+		<property name="buscador" ref="buscador"></property>
+		<property name="usuarioDTO" ref="usuarioDTO"></property>
+		<property name="conf" ref="configuracion"></property>
+
+	</bean>
+
+
+	<bean id="buscador" class="ar.com.indexer.paginador.Buscador">
+		<property name="conf" ref="configuracion"></property>
+	</bean>
+
+	<bean id="buscarThreads" class="ar.com.indexer.threads.BuscarThreads">
+		<property name="busquedaBO" ref="busquedaBO"></property>
+	</bean>
+
+	<bean id="busquedaDAO" class="ar.com.indexer.dao.BusquedaDAO">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+
+	<bean id="busquedaBO" class="ar.com.indexer.bo.BusquedaBO">
+		<property name="busquedaDAO" ref="busquedaDAO"></property>
+	</bean>
+
+	<bean id="archivosDAO" class="ar.com.indexer.dao.ArchivosDAO">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+
+	<bean id="archivosBO" class="ar.com.indexer.bo.ArchivosBO">
+		<property name="archivosDAO" ref="archivosDAO"></property>
+	</bean>
+
+
+
+
+	<bean id="usuarioDAO" class="ar.com.indexer.dao.UsuarioDAO">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+	<bean id="usuarioBO" class="ar.com.indexer.bo.UsuarioBO">
+		<property name="usuarioDAO" ref="usuarioDAO"></property>
+		<property name="usuarioDTO" ref="usuarioDTO"></property>
+		<property name="busquedaBO" ref="busquedaBO"></property>
+		<property name="codigosBO" ref="codigosBO"></property>
+	</bean>
+
+
+
+
+	<!-- threads -->
+	<bean id="taskExecutor"
+		class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
+		<property name="corePoolSize" value="5" />
+		<property name="maxPoolSize" value="10" />
+		<property name="WaitForTasksToCompleteOnShutdown" value="true" />
+	</bean>
+	<!-- threads -->
+
+
+
+
+
+</beans>

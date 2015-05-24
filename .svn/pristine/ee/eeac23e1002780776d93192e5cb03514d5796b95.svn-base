@@ -1,0 +1,254 @@
+
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="utf-8" />
+    
+    
+    <link rel="stylesheet" href="metrostyle/css/site.css" type="text/css" />
+    <link rel="stylesheet" href="metrostyle/css/dg-font-awesome.min.css" type="text/css">
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="/content/fa/assets/css/dg-font-awesome-ie7.min.css">
+    <![endif]-->
+    <link rel="stylesheet" href="metrojs/MetroJs.min.css" type="text/css" />    
+    
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-27990990-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+        function trackExternal(link, prefix) {
+            try {
+                if (typeof prefix == "undefined" || prefix == null)
+                    prefix = "";
+                var href = link.href.replace(/(http)(s)?:\/\/(www\.)?/i, "/outgoing/" + prefix);
+                _gaq.push(['_trackPageview', href]);
+            }
+            catch (err) { }
+        }
+	</script>
+    <script type="text/javascript" src="metrostyle/script/modernizr-2.5.3.js"></script>
+    
+    
+    
+    
+    <!-- aca empiza -->
+    <script src="metrostyle/jquery/jquery.js" type="text/javascript"></script>
+    <script src="metrojs/MetroJs.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var metroJs,
+            appBar;
+        // remove the default theme set for noscript and apply user theme
+        $(document).ready(function () {
+            $("body,.tiles").removeClass("dark blue");
+            metroJs = jQuery.fn.metrojs;
+            metroJs.theme.loadDefaultTheme();
+        });
+    </script>
+        
+    <script type="text/javascript" src="metrostyle/script/home.index.js"></script>
+
+    <script type="text/javascript">        
+        
+        $(document).ready(function () {
+            var doBind = (typeof (window.bindAppBarKeyboard) === "undefined" || window.bindAppBarKeyboard);
+            // create the app bar
+            appBar = $(".appbar").applicationBar({
+	    	applyTheme: false, // apply theme example below
+                preloadAltBaseTheme: true, // load both sets of images so there isn't a flicker when base theme is changed
+                metroLightUrl: '/images/metroIcons_light.jpg',
+                metroDarkUrl: '/images/metroIcons.jpg',
+                bindKeyboard: doBind // bind the keyboard unless specified in an included script
+            });
+            // add the accents and base colors to the appbar
+            metroJs.theme.appendAccentColors();
+            metroJs.theme.appendBaseThemes();
+        });
+        
+
+	</script>
+    <script type="text/javascript" src="metrostyle/script/jquery.mousewheel.min.js"></script>
+    <script type="text/javascript" src="metrostyle/script/global.js"></script>
+    <!--<script type="text/javascript">window.MetroJsVersion = '0.9.74';</script>-->
+    
+    
+    
+    
+    
+    
+    
+</head>
+<body class="desktop dark home">
+    <header>
+        <div class="site-title"><a href="/">drewgreenwell</a></div>
+    </header>
+    
+
+        
+    <section class="main-content panorama clear-fix">
+       <div class="content-wrapper tiles blue">
+            <section class="tile-group four-wide first">
+                <h2>eTraking</h2>
+                <div class="live-tile" data-delay="6000" data-mode="flip" data-bounce="true" data-direction="horizontal">
+                    <div>
+                        <a href="http://dev.w3.org/html5/spec/spec.html" onclick="javascript:_gaq.push('_trackPageview',['/outgoing/dev.w3.org/html5/']);" target="_blank">
+                            <img src="moto.png" class="full" alt="html5" title="HTML 5" />s
+                        </a>
+                    </div>
+                    <div>
+                        <a href="http://www.w3.org/Style/CSS/current-work.en.html" onclick="javascript:_gaq.push('_trackPageview',['/outgoing/www.w3.org/Style/CSS/current-work.en.html']);" target="_blank">
+                            <img src="moto2.png" title="CSS 3" class="full" alt="css 3" />
+                        </a>
+                    </div>
+                </div>                
+                <div class="live-tile two-wide exclude">
+                    <div><p>Hello, I'm Drew Greenwell. I'm a professional developer living in Louisville, Kentucky. I specialize in creating engaging experiences on the web and mobile devices.</p></div>
+                </div>
+                <div class="live-tile me" data-mode="slide" data-stops="50%,100%,0px" data-link="/about" data-bounce="true" data-stack="true" data-delay="4250">
+                    <div><img class="full" src="images/drewg2.jpg" alt="Drew Greenwell" /></div>
+                    <div><span class="bottom metroExtraLarge">Me</span></div>
+                </div>
+                <div class="live-tile two-wide accent emerald" data-pause-onhover="true" data-bounce="true" data-link="http://www.leapagency.com" data-new-window="true" onclick="javascript:_gaq.push(['_trackPageView','/outgoing/leapagency.com']);">
+                    <div>
+                        <a href="http://www.leapagency.com" target="_blank" onclick="javascript:_gaq.push(['_trackPageView','/outgoing/leapagency.com']);"><img class="full" src="/images/leap-digital-agency.jpg" alt="Leap Agency" /></a></div>
+                    <div>
+                        <p>LEAP is a full-service digital agency that makes brands easy-to-find and hard-to-ignore. LEAP integrates brands not just across different platforms, but into people's lives.<br />I'm a senior developer at LEAP.</p>
+                        <span class="tile-title">leap</span>
+                    </div>
+                </div>
+                <div class="live-tile skills exclude">
+                    <ul class="flip-list skill-list nineTiles" data-mode="flip-list" data-back-isbg="true" data-always-trigger="true" data-pause-onnhover="true" data-swap="image" data-initdelay="2000" data-delay="5000">
+                        <li><div><img src="images/skills/mcsd_small.jpg" alt="front" /></div><div class="accent"><img src="images/1pixel.gif" alt="back" /></div></li>
+                        <li data-direction="horizontal"><div><img src="images/skills/dotnet_small.jpg" alt="front" /></div><div><img src="images/1pixel.gif" alt="back" /></div></li>
+                        <li><div><img src="images/skills/jquery_small.jpg" alt="front" /></div><div><img src="images/1pixel.gif" alt="back" /></div></li>                        
+                        <li><div><img src="images/skills/mvc_small.jpg" alt="front" /></div><div><img src="images/1pixel.gif" alt="back" /></div></li>
+                        <li><div><img src="images/skills/ajax_small.jpg" alt="front" /></div><div><img src="images/1pixel.gif" alt="back" /></div></li>
+                        <li><div><img src="images/skills/aspnet_small.jpg" alt="front" /></div><div><img src="images/1pixel.gif" alt="back" /></div></li>
+                        <li><div><img src="images/skills/w3c_small.jpg" alt="front" /></div><div><img src="images/1pixel.gif" alt="back" /></div></li>
+                        <li><div><img src="images/skills/xna_small.jpg" alt="front" /></div><div><img src="images/1pixel.gif" alt="back" /></div></li>
+                        <li><div><img src="images/skills/silverlight_small.jpg" alt="front" /></div><div><img src="images/1pixel.gif" alt="back" /></div></li>
+                    </ul>
+                </div>
+                <div class="live-tile projects" data-mode="slide" data-swap-back="image" data-stack="true" data-bounce="true" data-link="/projects" data-stops="100%" data-delay="8000">
+                    <div>
+                        <p>
+                            <span class="metroExtraLarge title">Projects</span>
+                            <img src="images/projects.png" alt="projects" class="full head" />
+                        </p>
+                    </div>
+                    <div>
+                        <img src="images/projects/leapfrog-kinect.jpg" class="full" alt="Digital out of Home project with LeapFrog Interactive" />
+                    </div>
+                </div>
+                <div class="tile-strip four-wide half-tall">
+                    <ul class="flip-list color-strip" data-mode="flip-list" data-always-trigger="true" data-initdelay="250" data-delay="3500">
+                        <li class="half-tile" data-direction="horizontal"><div></div><div class="accent orange"></div></li>
+                        <li class="half-tile"><div></div><div class="accent green"></div></li>
+                        <li class="half-tile"><div></div><div class="accent teal"></div></li>                        
+                        <li class="half-tile"><div></div><div class="accent red"></div></li>
+                        <li class="half-tile"><div></div><div class="accent yellow"></div></li>
+                        <li class="half-tile"><div></div><div class="accent steel"></div></li>
+                        <li class="half-tile"><div></div><div class="accent pink"></div></li>
+                        <li class="half-tile"><div></div><div class="accent purple"></div></li>                        
+                    </ul>
+                </div>
+            </section>
+            <section id="twitterFeed">
+                <h2>Tweets</h2>
+                <div>
+            <div class="first tweet" data-link="http://twitter.com/DGreenwell/status/422435441640353792" data-date="1/12/2014 1:30 PM">
+            <a rel="nofollow" class="pic" title="DGreenwell"
+                href="http://twitter.com/DGreenwell" target="_blank">
+                <img src="http://pbs.twimg.com/profile_images/184668878/Drew_Thumb_Oil_normal.jpg" alt="Drew Greenwell" />
+            </a>
+            Posted an update to MetroJS to address an inconsistency and unleash the bounce classes! You can now apply a bounce or tilt to any element!
+        </div>
+        <div class="tweet" data-link="http://twitter.com/mkristensen/status/421795376463482881" data-date="1/10/2014 7:07 PM">
+            <a rel="nofollow" class="pic" title="mkristensen"
+                href="http://twitter.com/mkristensen" target="_blank">
+                <img src="http://pbs.twimg.com/profile_images/2627040519/s2svzl1rrf00qir4rnlt_normal.jpeg" alt="Mads Kristensen" />
+            </a>
+            RT Open sourcing Web Essentials has really boosted the quality as well as the speed of the feature work. It's awesome to witness.
+        </div>
+        <div class="tweet" data-link="http://twitter.com/agilleo/status/421420003540209664" data-date="1/9/2014 6:15 PM">
+            <a rel="nofollow" class="pic" title="agilleo"
+                href="http://twitter.com/agilleo" target="_blank">
+                <img src="http://pbs.twimg.com/profile_images/378800000553636155/243b440b9c38177def1c6af4dcebed53_normal.jpeg" alt="Alan R. Gilleo" />
+            </a>
+            RT Check out our latest #<a rel='nofollow' onclick="javascript:_gaq.push(['_trackPageview','/outgoing/search.twitter.com/search?q=%23']);" href='http://search.twitter.com/search?q=%23motiondesign' target='_blank'>motiondesign</a> reel from our digital film and motion graphics team: [<a rel='nofollow' href='http://t.co/5Oc9MW4d8k' target='_blank' title='http://t.co/5Oc9MW4d8k' onclick="javascript:_gaq.push(['_trackPageview','/outgoing/t.co/5Oc9MW4d8k']);">link</a>] @<a rel='nofollow' onclick="javascript:_gaq.push(['_trackPageview','/outgoing/twitter.com/LEAPagency']);" href='http://twitter.com/LEAPagency' target='_blank'>LEAPagency</a> @<a rel='nofollow' onclick="javascript:_gaq.push(['_trackPageview','/outgoing/twitter.com/LEAPframe']);" href='http://twitter.com/LEAPframe' target='_blank'>LEAPframe</a>
+        </div>
+        <div class="tweet" data-link="http://twitter.com/DGreenwell/status/418970348667674624" data-date="1/3/2014 12:01 AM">
+            <a rel="nofollow" class="pic" title="DGreenwell"
+                href="http://twitter.com/DGreenwell" target="_blank">
+                <img src="http://pbs.twimg.com/profile_images/184668878/Drew_Thumb_Oil_normal.jpg" alt="Drew Greenwell" />
+            </a>
+            Really enjoying working with #<a rel='nofollow' onclick="javascript:_gaq.push(['_trackPageview','/outgoing/search.twitter.com/search?q=%23']);" href='http://search.twitter.com/search?q=%23bootstrap' target='_blank'>bootstrap</a> lately. Its matured into a well thought out and solid base for projects
+        </div>
+        <div class="tweet" data-link="http://twitter.com/migueldeicaza/status/418357899279482880" data-date="1/1/2014 7:27 AM">
+            <a rel="nofollow" class="pic" title="migueldeicaza"
+                href="http://twitter.com/migueldeicaza" target="_blank">
+                <img src="http://pbs.twimg.com/profile_images/422542052/nueva_normal.jpg" alt="Miguel de Icaza" />
+            </a>
+            RT Your mission, first day of the year, 2014: [<a rel='nofollow' href='http://t.co/OLbc9UF0j7' target='_blank' title='http://www.upworthy.com/9-out-of-10-americans-are-completely-wrong-about-this-mind-blowing-fact-2' onclick="javascript:_gaq.push(['_trackPageview','/outgoing/t.co/OLbc9UF0j7']);">link</a>]
+        </div>
+        <div class="last tweet" data-link="http://twitter.com/DGreenwell/status/417083952541614080" data-date="12/28/2013 7:05 PM">
+            <a rel="nofollow" class="pic" title="DGreenwell"
+                href="http://twitter.com/DGreenwell" target="_blank">
+                <img src="http://pbs.twimg.com/profile_images/184668878/Drew_Thumb_Oil_normal.jpg" alt="Drew Greenwell" />
+            </a>
+            @<a rel='nofollow' onclick="javascript:_gaq.push(['_trackPageview','/outgoing/twitter.com/slichenmyer']);" href='http://twitter.com/slichenmyer' target='_blank'>slichenmyer</a> you can just override the z-index. Add an id and use that for your CSS, or just increase the z-index of your nav
+        </div>
+
+
+
+                </div>
+            </section>
+
+        </div>
+    </section>
+
+    
+<footer class="appbar">
+    <nav class="clear">
+		<ul class="appbar-buttons" id="menu">
+			<li>
+				<a class="home" href="/"><img alt="home" src="metrostyle/imagenes/1pixel.gif"></a>
+				<span class="charm-title">Home</span>
+			</li>
+			<li>
+				<a class="about" href="/about"><img alt="about" src="metrostyle/imagenes/1pixel.gif"></a>
+				<span class="charm-title">About</span>
+			</li>
+			<li>
+				<a class="twitter" target="_blank" onclick="javascript:trackExternal(this);" href="http://www.twitter.com/dgreenwell"><img alt="twitter" src="metrostyle/imagenes/1pixel.gif"></a>
+				<span class="charm-title">Twitter</span>
+			</li>
+		</ul>
+	</nav>
+    <a class="etc">&bull;&bull;&bull;</a>
+    <div class="tray">
+        <section class="base-theme-options">            
+            <h2>Base Theme</h2>
+            <ul></ul>
+        </section>
+        <section class="theme-options">
+            <h2>Accent Color</h2>
+            <ul></ul>
+        </section>
+        <section class="links clear">
+            <ul>
+                <li><a href="/projects/metrojs/theme-generator">Generate a theme...</a></li>
+            </ul>
+        </section>
+    </div>      
+</footer>
+
+
+
+</body>
+</html>

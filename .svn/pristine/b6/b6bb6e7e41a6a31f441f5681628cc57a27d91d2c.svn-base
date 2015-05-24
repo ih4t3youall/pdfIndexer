@@ -1,0 +1,28 @@
+package ar.com.indexer.configuracion;
+
+public class Configuracion {
+
+	
+	//path desarrollo
+	 private  String PATH_BASE
+	 ="/home/ubuntu/Escritorio/directoriosServidor/";
+	 private String
+	 PATH_TEMP="/home/ubuntu/Escritorio/archivosTemporales/";
+	 //fin path desarrollo
+	public String getPATH_BASE() {
+		return PATH_BASE;
+	}
+	public void setPATH_BASE(String pATH_BASE) {
+		PATH_BASE = pATH_BASE;
+	}
+	public String getPATH_TEMP() {
+		return PATH_TEMP;
+	}
+	public void setPATH_TEMP(String pATH_TEMP) {
+		PATH_TEMP = pATH_TEMP;
+	}
+	 
+	 
+	 
+	 
+}

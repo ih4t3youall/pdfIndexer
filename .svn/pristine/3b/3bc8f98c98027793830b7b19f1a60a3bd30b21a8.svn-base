@@ -1,0 +1,5 @@
+<link rel="stylesheet" href="resources/Metro-UI-CSS-master/css/metro-bootstrap.css">
+
+<script src="resources/Metro-UI-CSS-master/jquery.widget.min.js"></script>
+<script src="resources/Metro-UI-CSS-master/min/metro.min.js"></script>
+<script src="resources/Metro-UI-CSS-master/js/metro-dropdown.js"></script>
