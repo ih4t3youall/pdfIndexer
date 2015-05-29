@@ -20,10 +20,10 @@
 
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
 		<property name="url" value="jdbc:mysql://localhost:3306/pdfindexer" />
-		<!-- <property name="username" value="root" /> -->
-		<!-- <property name="password" value="root" /> -->
-		<property name="username" value="pdfIndexer" />
-		<property name="password" value="YKu4cqfXWM7TxaXK" />
+		<property name="username" value="root" />
+		<property name="password" value="root" />
+<!-- 		<property name="username" value="pdfIndexer" /> -->
+<!-- 		<property name="password" value="YKu4cqfXWM7TxaXK" /> -->
 	</bean>
 
 

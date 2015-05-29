@@ -142,7 +142,8 @@
 			//Añadimos la imagen de carga en el contenedor
 			$('#contenedor_secundario').empty();
 			$('#contenedor_secundario').append(
-					'<div><img src="resources/imagenes/loading.gif"/></div>');
+					'<div><img  src="resources/imagenes/loading.gif"/></div>');
+
 			$.ajax({
 				type : "POST",
 				traditional : true,
@@ -167,7 +168,7 @@
 					background : 'red',
 					color : 'white'
 				},
-				content : "Debe completar todos los campos."
+				content : "Debe completar todos los campos.Presione + para agregar palabras."
 			});
 
 		}
@@ -183,6 +184,8 @@
 </script>
 
 <div class="grid">
+
+
 	<div class="row">
 		<div class="span6 offset3 example">
 			<!-- <div id="contenedor"> -->

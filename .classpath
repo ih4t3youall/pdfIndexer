@@ -5,7 +5,7 @@
 	<classpathentry kind="var" path="M2_REPO/javax/servlet/jstl/1.1.2/jstl-1.1.2.jar"/>
 	<classpathentry kind="var" path="M2_REPO/javax/transaction/jta/1.1/jta-1.1.jar"/>
 	<classpathentry kind="var" path="M2_REPO/javax/persistence/persistence-api/1.0/persistence-api-1.0.jar"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="var" path="M2_REPO/org/apache/pdfbox/fontbox/1.8.5/fontbox-1.8.5.jar"/>
 	<classpathentry kind="var" path="M2_REPO/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar"/>
 	<classpathentry kind="var" path="M2_REPO/org/apache/lucene/lucene-core/3.6.1/lucene-core-3.6.1.jar"/>
@@ -53,7 +53,6 @@
 	<classpathentry kind="var" path="M2_REPO/com/lowagie/itext/2.0.7/itext-2.0.7.jar"/>
 	<classpathentry kind="var" path="M2_REPO/bouncycastle/bcmail-jdk14/138/bcmail-jdk14-138.jar"/>
 	<classpathentry kind="var" path="M2_REPO/bouncycastle/bcprov-jdk14/138/bcprov-jdk14-138.jar"/>
-	<classpathentry kind="lib" path="/home/ubuntu/workspacePdfIndexerIndigo/SpringMVC/src/main/resources/pdf-renderer-1.0.5.jar"/>
-	<classpathentry kind="var" path="M2_REPO"/>
+	<classpathentry kind="lib" path="/home/ubuntu/workspacePdfIndexerGitHub/pdfIndexer/src/main/resources/pdf-renderer-1.0.5.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="1.5.0">
   <wb-module deploy-name="SpringMVC">
     <property name="context-root" value="SpringMVC"/>
     <wb-resource deploy-path="/" source-path="src/main/webapp"/>
@@ -153,9 +154,6 @@
     <dependent-module archiveName="bcprov-jdk14-138.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/var/M2_REPO/bouncycastle/bcprov-jdk14/138/bcprov-jdk14-138.jar">
       <dependency-type>uses</dependency-type>
     </dependent-module>
-        <dependent-module archiveName="pdf-renderer-1.0.5.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//home/ubuntu/workspacePdfIndexerIndigo/SpringMVC/src/main/resources/pdf-renderer-1.0.5.jar">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
     <wb-resource deploy-path="/WEB-INF/classes" source-path="src/main/java"/>
     <wb-resource deploy-path="/WEB-INF/classes" source-path="src/main/resources"/>
   </wb-module>
