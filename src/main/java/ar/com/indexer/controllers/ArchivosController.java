@@ -34,7 +34,7 @@ public class ArchivosController {
 	}
 
 	@RequestMapping("agregarFechaADocumento.htm")
-	public  void agregarFechaADocumento( String documento,String fecha) {
+	public  @ResponseBody String  agregarFechaADocumento( String documento,String fecha) {
 
 		
 
@@ -58,14 +58,14 @@ public class ArchivosController {
 		archivosBO.guardarNuevoArchivo(documento);
 
 		FechaUtility.getFechaActual();
-
+		return "un texto";
 
 	}
 	
 	
 	@RequestMapping ("agregarDocumentosExito.htm")
-	public  ModelAndView agregarDocumentosExito(){
-		ModelAndView mav = new ModelAndView("resources/jsp/archivosadicionDeArchivoExitosa.jsp");
+	public ModelAndView agregarDocumentosExito(){
+		ModelAndView mav = new ModelAndView("archivos/adicionDeArchivoExitosa");
 		return mav;
 		
 		

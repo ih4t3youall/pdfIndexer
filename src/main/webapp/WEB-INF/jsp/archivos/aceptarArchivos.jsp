@@ -67,23 +67,31 @@
 
 		});
 		
+		agregadoConExito();
+
 		
+
+	}
+	
+	function agregadoConExito(){
 		$.ajax({
-			
+			type : "POST",
+			traditional : true,
 			url : "agregarDocumentosExito.htm",
-			sucess : function(response){
+			success : function(response){
 				
-				$(".box").empty();
-				$(".box").append(response);
+				$("#contenedor_secundario").empty();
+				$("#contenedor_secundario").append(response);
 				
 			}
 			
 			
 			
-		})
+		});
 		
-
+		
 	}
+	
 </script>
 
 
