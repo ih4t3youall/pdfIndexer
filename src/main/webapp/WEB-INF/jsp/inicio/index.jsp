@@ -180,7 +180,7 @@
 		$.ajax({
 			type : "POST",
 			traditional : true,
-			url : "verClavesNoUtilizadas",
+			url : "verClavesNoUtilizadas.htm",
 
 			success : function(response) {
 				$("#contenedor_secundario").html(response);
