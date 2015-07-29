@@ -23,6 +23,17 @@
 
 
 <script>
+
+
+	function validarMail(){
+		if($("#mail").val().indexOf('@', 0) == -1 || $("#mail").val().indexOf('.', 0) == -1) {  
+	        return false;  
+	    }  else {
+	    return true;  
+	    }
+		
+	}
+
 	function validarContrasenia() {
 
 		var passwd = $('.npasswd');
@@ -46,10 +57,9 @@
 			
 		});
 		
+		if(validarMail()){
 		
-		
-		if (codigoAceptado){
-		
+		if (codigoAceptado == 'true'){
 		if ($(passwd[0]).val() == $(passwd[1]).val()) {
 
 			$.ajax({
@@ -61,8 +71,7 @@
 				success : function(response) {
 					
 					if(response =="false" ){
-						
-			$('#formulario').submit();
+						$('#formulario').submit();
 						
 					}else {
 						
@@ -79,9 +88,14 @@
 			
 
 		}else{
-			
 			$.Notify({style: {background: 'red', color: 'white'}, content: "Error en el codigo de verificacion."});
 			$('#codigoVerificador').css('color','red');
+		}
+		
+		}else{
+			$.Notify({style: {background: 'red', color: 'white'}, content: "La direccion de correo debe ser valida."});
+			$('#codigoVerificador').css('color','red');
+			
 		}
 
 	}
@@ -137,8 +151,8 @@
 								<button type="button" class="btn-clear" tabindex="-1"></button>
 							</div>
 							<label>Mail</label>
-							<div class="input-control text" data-role="input-control">
-								<form:input type="text" path="mail" placeholder="type text"
+							<div  class="input-control text" data-role="input-control">
+								<form:input id="mail" type="text" path="mail" placeholder="type text"
 									class="ntext"/>
 								<button type="button" class="btn-clear" tabindex="-1"></button>
 							</div>
@@ -168,7 +182,7 @@
 				<div>
 
 					<input type="button" onclick="validarContrasenia()" value="aceptar"
-						onclick="validar()"/>
+						/>
 					</form:form>
 
 

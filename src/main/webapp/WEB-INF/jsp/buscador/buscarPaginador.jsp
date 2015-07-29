@@ -6,7 +6,7 @@
 
 
 
-
+ <script src="resources/jquery/notify.min.js" type="text/javascript"></script>
 <script type="text/javascript">
 	var cantidadMaxima = 0;
 	
@@ -105,13 +105,21 @@
 			$('.texto').remove();
 			$('#textos label').remove();
 			cantidadMaxima = $(contexto).find('option:selected').attr('numero');
-			$.Notify({
-				style : {
-					background : 'blue',
-					color : 'white'
-				},
-				content : "Restan : " + cantidadMaxima + " Busquedas."
-			});
+			
+
+			$("#cuadroBusqueda").notify(
+					"Restan : " + cantidadMaxima + " Busquedas.", 
+			  { position:"top-left" }
+			);
+			
+// 			$.Notify({
+// 				style : {
+// 					background : 'blue',
+// 					color : 'white',
+// 					position:"left"
+// 				},
+// 				content : "Restan : " + cantidadMaxima + " Busquedas."
+// 			});
 
 		}
 
@@ -142,7 +150,7 @@
 			//Añadimos la imagen de carga en el contenedor
 			$('#contenedor_secundario').empty();
 			$('#contenedor_secundario').append(
-					'<div><img  src="resources/imagenes/loading.gif"/></div>');
+					'<div align="center"><img  src="resources/imagenes/loading.gif"/></div>');
 
 			$.ajax({
 				type : "POST",
@@ -187,7 +195,7 @@
 
 
 	<div class="row">
-		<div class="span6 offset3 example">
+		<div id="cuadroBusqueda" class="span6 offset3 example">
 			<!-- <div id="contenedor"> -->
 
 			<form:form method="post" name="busqueda" id="busqueda"

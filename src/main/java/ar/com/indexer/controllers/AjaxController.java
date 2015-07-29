@@ -116,7 +116,7 @@ public class AjaxController {
 
 		File[] listFiles = file.listFiles();
 		ArrayList<String> listStringFiles = new ArrayList<String>();
-
+		if(listFiles != null){
 		for (int i = 0; i < listFiles.length; i++) {
 			if (!listFiles[i].isDirectory()) {
 				listStringFiles.add(listFiles[i].getName());
@@ -129,6 +129,10 @@ public class AjaxController {
 		String respuesta = HtmlUtility.cajaArchivos(listStringFiles);
 
 		return respuesta;
+		}else {
+			return "";
+			
+		}
 	}
 
 	@RequestMapping("buscador.htm")

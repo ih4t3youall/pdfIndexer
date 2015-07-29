@@ -91,7 +91,7 @@
 			
 			 <br />
 			 <input class="btn btn-primary btn-sm"
-						name="submit" type="submit" value="submit" />
+						name="submit" type="submit" value="Ingresar" />
 						<label><a href="crearCuenta.htm">Crear cuenta</a></label>
 
 		</div>

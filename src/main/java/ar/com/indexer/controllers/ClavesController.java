@@ -119,7 +119,7 @@ public class ClavesController {
 			}
 		}
 
-		return cadenaAleatoria;
+		return cadenaAleatoria.toLowerCase();
 
 	}
 
