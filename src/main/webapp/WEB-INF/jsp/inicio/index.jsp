@@ -340,7 +340,7 @@
 								<ul data-role="dropdown" class="dropdown-menu ">
 									<li><a onclick="upload()"> Subir archivos</a></li>
 									<li><a onclick="aceptarArchivos()">Aceptar Archivos</a></li>
-									<li><a onclick="eliminarArchivos()">Eliminar archivos</a></li>
+<!-- 									<li><a onclick="eliminarArchivos()">Eliminar archivos</a></li> -->
 									<li><a onclick="agregarUsuario();">Agregar Usuario</a></li>
 									<li><a onclick="altaUsuario();">Dar Usuario de
 											alta/baja</a></li>
