@@ -12,6 +12,49 @@
 <script src="resources/Metro-UI-CSS-master/min/metro.min.js"></script>
 <script src="resources/Metro-UI-CSS-master/js/metro-dropdown.js"></script>
 
+<style type="text/css">
+#navegador ul{
+   list-style-type: none;
+   text-align: left;
+   background-color:#208DFF;
+   padding-left: 162px;
+}
+#navegador li{
+   display: inline;
+   text-align: center;
+  
+}
+#navegador li a {
+   padding: 2px 7px 2px 7px;
+   
+}
+.menuN{
+height:50px;!important
+
+}
+span{
+	color:#208DFF;
+	}
+#acomodaRegistro{
+	
+	 height: 30px;
+    padding-left: 29px;
+	}	
+
+
+   </style>
+
+<script>
+
+
+function pruebe(){
+	
+	
+	
+}
+
+</script>
+
 
 </head>
 
@@ -21,10 +64,30 @@
 
 <c:if test="${not empty error}">
 			<div class="errorblock">
-				Your login attempt was not successful, try again.<br /> Caused :
+				Error de usuario y contraseña por favor intente nuevamente.<br /> Caused :
 				${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}
 			</div>
 		</c:if>
+
+<!-- nuevo menu -->
+
+
+
+
+
+<div  id="navegador">
+<ul>
+<li><a href="#"><img class="menuN" src="resources/imagenes/imagenesMenu/bienvenido.png" alt="descripcion" /></a></li>
+<li><a href="#"><img class="menuN" src="resources/imagenes/imagenesMenu/porque.png" alt="descripcion" /></a></li>
+<li><a href="#"><img class="menuN" src="resources/imagenes/imagenesMenu/comofunciona.png" alt="descripcion" /></a></li>
+<li><a onclick="pruebe()" ><img class="menuN" src="resources/imagenes/imagenesMenu/pruebe.png" alt="descripcion" /></a></li>
+<li><a href="#"><img class="menuN" src="resources/imagenes/imagenesMenu/compre.png" alt="descripcion" /></a></li>
+<li><a href="#"><img class="menuN" src="resources/imagenes/imagenesMenu/conectese.png" alt="descripcion" /></a></li>
+
+</ul>
+</div>
+<!-- fin nuevo menu  -->
+
 
 
 	<div class="container_12">

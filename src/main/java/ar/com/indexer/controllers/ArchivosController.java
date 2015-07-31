@@ -84,9 +84,9 @@ public class ArchivosController {
 	}
 
 	private File pathAbsolutoDelArchivo(String documento) {
-		File[] listFiles = file.listFiles();
+		File[] listFiles = new File(conf.getPATH_FTP()).listFiles();
 		File doc = null;
-
+		
 		for (File file : listFiles) {
 			if (file.getName().equals(documento)) {
 

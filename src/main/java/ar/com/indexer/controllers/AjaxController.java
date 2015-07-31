@@ -53,12 +53,37 @@ public class AjaxController {
 		ModelAndView mav = new ModelAndView("archivos/aceptarArchivos");
 
 		FormBuscarDTO buscar = new FormBuscarDTO();
-		buscar.setArchivos(buscarArchivos());
+		buscar.setArchivos(buscarAceptarArchivos());
 		mav.addObject("buscar", buscar);
 		Date fechaActual = FechaUtility.getFechaActual();
 		mav.addObject("fechaActual", fechaActual);
 		return mav;
 
+	}
+	
+	private String[]  buscarAceptarArchivos(){
+		
+		file = new File(conf.getPATH_FTP());
+
+		File[] listFiles = file.listFiles();
+		ArrayList<String> listStringFiles = new ArrayList<String>();
+
+		for (int i = 0; i < listFiles.length; i++) {
+			if (!listFiles[i].isDirectory()) {
+				listStringFiles.add(listFiles[i].getName());
+			}
+
+		}
+
+		String[] listaString = new String[listStringFiles.size()];
+
+		for (int i = 0; i < listStringFiles.size(); i++) {
+			listaString[i] = listStringFiles.get(i);
+
+		}
+
+		return listaString;
+		
 	}
 
 	private String[] buscarCarpetas() {

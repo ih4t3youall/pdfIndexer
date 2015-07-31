@@ -13,7 +13,8 @@ public class Configuracion {
 	private String PATH_TEMP;
 	// fin path desarrollo
 	// servidor local
-
+	@Value("${path.ftp}")
+	private String PATH_FTP;
 
 	// fin servidor local
 
@@ -31,6 +32,11 @@ public class Configuracion {
 
 	public void setPATH_TEMP(String pATH_TEMP) {
 		PATH_TEMP = pATH_TEMP;
+	}
+	
+	public String getPATH_FTP(){
+		return PATH_FTP;
+		
 	}
 
 }

@@ -13,7 +13,7 @@ public class AdminController {
 	public ModelAndView printWelcome(ModelMap model) {
 
 		ModelAndView mav = new ModelAndView("/test/resultao");
-		mav.addObject("resultado","entraste iupi!gil!");
+		
 		return mav;
 
 	}
