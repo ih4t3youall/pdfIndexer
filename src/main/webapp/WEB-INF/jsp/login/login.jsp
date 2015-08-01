@@ -49,6 +49,38 @@ span{
 
 function pruebe(){
 	
+	$.ajax({
+		type : "POST",
+		traditional : true,
+		url : "pruebe.htm",
+	        datatype : "text/json",
+		success : function(response) {
+	
+			$('#parrafo').empty();
+			$('#parrafo').append(response);
+			
+		},
+		error : function(e) {
+	console.log(e);
+		}
+	});
+	
+	$.ajax({
+		type : "POST",
+		traditional : true,
+		url : "pruebeParteDerecha.htm",
+	        datatype : "text/json",
+		success : function(response) {
+	
+			$('#derecha').empty();
+			$('#derecha').append(response);
+			
+		},
+		error : function(e) {
+	console.log(e);
+		}
+	});
+	
 	
 	
 }
@@ -64,7 +96,7 @@ function pruebe(){
 
 <c:if test="${not empty error}">
 			<div class="errorblock">
-				Error de usuario y contraseña por favor intente nuevamente.<br /> Caused :
+				Error de usuario y contraseña por favor intente nuevamente.<br /> Causado por:
 				${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}
 			</div>
 		</c:if>
@@ -130,7 +162,7 @@ function pruebe(){
 
 		</div>
 
-		<div class="grid_4">
+		<div id="derecha" class="grid_4">
 
 			<br /> <br /> <br /> <br />
 			

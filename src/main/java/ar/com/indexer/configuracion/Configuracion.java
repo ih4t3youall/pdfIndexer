@@ -15,6 +15,15 @@ public class Configuracion {
 	// servidor local
 	@Value("${path.ftp}")
 	private String PATH_FTP;
+	//path de los textos del sistema
+	@Value("${path.textos}")
+	private String PATH_TEXTOS;
+	
+	public String getPATH_TEXTOS(){
+		
+		return PATH_TEXTOS;
+		
+	}
 
 	// fin servidor local
 
