@@ -57,15 +57,17 @@ public class UsuarioBO {
 
 		  UsuarioDTO usuario = usuarioDAO.getUsuarioByUsername(username);
 		  usuarioDTO.setFecha_caducidad(usuario.getFecha_caducidad());
+		  usuarioDTO.setPasswd(usuario.getPasswd());
 		  usuarioDTO.setApellido(usuario.getApellido());
-		  usuarioDTO.setDireccion(usuario.getDireccion());
-		  usuarioDTO.setEmpresa(usuario.getEmpresa());
+		  usuarioDTO.setRazonSocial(usuario.getRazonSocial());
+		  usuarioDTO.setRuc(usuario.getRuc());
 		  usuarioDTO.setIdUsuario(usuario.getIdUsuario());
 		  usuarioDTO.setMail(usuario.getMail());
 		  usuarioDTO.setNombre(usuario.getNombre());
 		  usuarioDTO.setNombreUsuario(usuario.getNombreUsuario());
 		  usuarioDTO.setTelefono(usuario.getTelefono());
 		  usuarioDTO.setTipo_usuario(usuario.getTipo_usuario());
+		  usuarioDTO.setTemporal(usuario.isTemporal());
 		  
 		  BusquedasRestantesDTO busquedasRestantes = busquedaBO.busquedasRestantes(usuarioDTO);
 		  usuarioDTO.setBusquedasRestantesDTO(busquedasRestantes);

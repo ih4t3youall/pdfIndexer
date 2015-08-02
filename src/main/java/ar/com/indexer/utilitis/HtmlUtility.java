@@ -63,16 +63,19 @@ public class HtmlUtility {
 					+ usuarioDTO.getNombre()
 					+ "<br>"
 					+ ""
+					+"temporal: "+ usuarioDTO.isTemporal()
+					+ "<br>"
+					+ ""
 					+ usuarioDTO.getApellido()
 					+ "<br>"
 					+ ""
-					+ usuarioDTO.getDireccion()
+					+ usuarioDTO.getRazonSocial()
 					+ "<br>"
 					+ "<abbr title=\"Phone\">Tel:</abbr> "
 					+ usuarioDTO.getTelefono()
 					+ "<br>"
 					+ ""
-					+ usuarioDTO.getEmpresa()
+					+ usuarioDTO.getRuc()
 					+ "<br>"
 					+ ""
 					+ usuarioDTO.getMail()

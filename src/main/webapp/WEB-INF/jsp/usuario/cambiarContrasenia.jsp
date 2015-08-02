@@ -22,9 +22,10 @@ function validar(){
 			type : "POST",
 			traditional : true,
 			url : "changePasswd.htm",
-			data : "contrasenia="+$(passwd[0]).val(),
+			data : "contrasenia="+$(passwd[0]).val()+"&contraseniaAntigua="+$('#contaseniaAntigua').val(),
 			success : function(response) {
-				// we have the response
+				$('#contenedor_secundario').empty();
+				$('#contenedor_secundario').append(response);
 				
 
 			},
@@ -43,17 +44,18 @@ function validar(){
 
 
 <body class="metro">
+
 	<div class="grid">
 		<div class="row">
 			<div class="span4 offset4">
-	<div class="example">
+	<div  class="example">
                                  		<form:form method="post" name="busqueda" id="cambiarContrasenia" 
  			action="changePasswd.htm" modelAttribute="usuarioDTO"> 
                                     <fieldset>
                                         <legend>Cambio de contrase&ntilde;a.</legend>
                                         <label>Ingrese Contrase&ntilde;a actual</label>
                                         <div data-role="input-control" class="input-control password">
-                                            <input type="password" autofocus="" placeholder="type password">
+                                            <input type="password" autofocus="" id="contaseniaAntigua" placeholder="type password">
                                             <button tabindex="-1" class="btn-reveal" type="button"></button>
                                         </div>
                                         <label>Ingrese Contrase&ntilde;a nueva.</label>

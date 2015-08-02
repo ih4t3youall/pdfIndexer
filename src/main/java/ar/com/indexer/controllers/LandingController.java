@@ -58,7 +58,7 @@ public class LandingController {
 	
 	
 	@RequestMapping("/registroDePrueba.htm")
-	public void registroDePrueba(String passwd,String nombreUsuario,String apellido,String razonSocial,
+	public ModelAndView registroDePrueba(String passwd,String nombreUsuario,String apellido,String razonSocial,
 			String ruc,String telefono,String correoElectronico){
 	
 		UsuarioTemporalDTO usuarioTemporalDTO = new UsuarioTemporalDTO();
@@ -71,8 +71,9 @@ public class LandingController {
 		usuarioTemporalDTO.setCorreoElectronico(correoElectronico);
 		usuarioBO.guardarUsuarioTemporal(usuarioTemporalDTO);
 		
+		ModelAndView mav = new ModelAndView("fueraLogin/registroTemporalExito");
 		
-		
+		return mav;
 		
 	}
 	

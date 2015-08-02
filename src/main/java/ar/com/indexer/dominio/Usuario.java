@@ -13,11 +13,22 @@ public class Usuario {
 	private String correoElectronico;
 	private boolean emitirFactura;
 	private boolean enabled;
+	private boolean temporal;
+	
+	
 	
 	
 
 	
 	
+	public boolean isTemporal() {
+		return temporal;
+	}
+
+	public void setTemporal(boolean temporal) {
+		this.temporal = temporal;
+	}
+
 	public String getRazonSocial() {
 		return razonSocial;
 	}

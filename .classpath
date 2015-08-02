@@ -253,10 +253,6 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/Users/martinLequerica/Desktop/workspacePdfindexerGitHub/pdfIndexer/src/main/resources/pdf-renderer-1.0.5.jar">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
+	<classpathentry kind="lib" path="/home/ubuntu/workspacePdfIndexerGitHub/pdfIndexer/src/main/resources/pdf-renderer-1.0.5.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

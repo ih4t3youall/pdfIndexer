@@ -21,11 +21,12 @@ public class UsuarioRowMapper implements RowMapper<UsuarioDTO> {
 		usuario.setEnabled(rs.getBoolean("ENABLED"));
 		usuario.setIdUsuario(rs.getInt("USER_ID"));
 		usuario.setTelefono(rs.getString("telefono"));
-		usuario.setEmpresa(rs.getString("empresa"));
+		usuario.setRuc(rs.getString("ruc"));
 		usuario.setMail(rs.getString("mail"));
-		usuario.setDireccion(rs.getString("direccion"));
+		usuario.setRazonSocial(rs.getString("razonsocial"));
 		usuario.setTipo_usuario(rs.getString("tipo_usuario"));
 		usuario.setFecha_caducidad(rs.getDate("caduca"));
+		usuario.setTemporal(rs.getBoolean("temporal"));
 		return usuario;
 	}
 

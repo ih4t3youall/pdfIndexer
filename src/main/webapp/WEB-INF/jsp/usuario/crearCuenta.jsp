@@ -132,9 +132,9 @@
 									class="ntext"/>
 								<button type="button" class="btn-clear" tabindex="-1"></button>
 							</div>
-							<label>Direccion</label>
+							<label>Razon social</label>
 							<div class="input-control text" data-role="input-control">
-								<form:input type="text" path="direccion" placeholder="type text"
+								<form:input type="text" path="razonSocial" placeholder="type text"
 									class="ntext"/>
 								<button type="button" class="btn-clear" tabindex="-1"></button>
 							</div>
@@ -144,9 +144,9 @@
 									class="ntext"/>
 								<button type="button" class="btn-clear" tabindex="-1"></button>
 							</div>
-							<label>Empresa</label>
+							<label>ruc</label>
 							<div class="input-control text" data-role="input-control">
-								<form:input type="text" path="empresa" placeholder="type text"
+								<form:input type="text" path="ruc" placeholder="type text"
 									class="ntext"/>
 								<button type="button" class="btn-clear" tabindex="-1"></button>
 							</div>
@@ -168,6 +168,8 @@
 									class="npasswd"/>
 								<button type="button" class="btn-reveal" tabindex="-1"></button>
 							</div>
+							
+							
 							
 							<label>Codigo Verificador</label>
 							<div class="input-control password" data-role="input-control">

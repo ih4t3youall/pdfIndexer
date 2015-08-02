@@ -96,15 +96,15 @@ public class UsuarioDAO {
 	
 	@Transactional(propagation = Propagation.REQUIRED, rollbackFor = Exception.class)
 	public int saveUsers(UsuarioDTO usuarioDTO) {
-		String sql = "insert into users (USERNAME,PASSWORD, ENABLED,nombre,apellido,direccion,telefono,empresa,mail,tipo_usuario,caduca) values (?,?,?,?,?,?,?,?,?,?,?)";
+		String sql = "insert into users (USERNAME,PASSWORD, ENABLED,nombre,apellido,razonsocial,telefono,ruc,mail,tipo_usuario,caduca,temporal) values (?,?,?,?,?,?,?,?,?,?,?,?)";
 		jdbcTemplate.update(
 				sql,
 				new Object[] { usuarioDTO.getNombreUsuario(),
 						usuarioDTO.getPasswd(), usuarioDTO.isEnabled(),
 						usuarioDTO.getNombre(), usuarioDTO.getApellido(),
-						usuarioDTO.getDireccion(), usuarioDTO.getTelefono(),
-						usuarioDTO.getEmpresa(), usuarioDTO.getMail(),
-						usuarioDTO.getTipo_usuario(),usuarioDTO.getFecha_caducidad() });
+						usuarioDTO.getRazonSocial(), usuarioDTO.getTelefono(),
+						usuarioDTO.getRuc(), usuarioDTO.getMail(),
+						usuarioDTO.getTipo_usuario(),usuarioDTO.getFecha_caducidad(),usuarioDTO.isTemporal() });
 		return jdbcTemplate.queryForInt("select last_insert_id()");
 
 	}

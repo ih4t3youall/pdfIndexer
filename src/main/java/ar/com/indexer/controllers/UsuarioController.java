@@ -20,9 +20,18 @@ public class UsuarioController {
 	private CodigosBO codigoBO;
 
 	@RequestMapping("/changePasswd.htm")
-	public void cambiarContrasenia(@RequestParam String contrasenia) {
+	public ModelAndView cambiarContrasenia(@RequestParam String contrasenia,@RequestParam String contraseniaAntigua) {
+		
+		
+		if(usuarioDTO.getPasswd().equals(contraseniaAntigua)){
 		usuarioDTO.setPasswd(contrasenia);
 		usuarioBO.actualizarPasswdUsuario(usuarioDTO);
+		return new ModelAndView("usuario/cambioExito");
+		}else {
+			return new ModelAndView("usuario/contraseniaNoValida");	
+			
+			
+		}
 
 	}
 

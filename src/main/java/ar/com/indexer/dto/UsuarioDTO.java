@@ -11,16 +11,23 @@ public class UsuarioDTO {
 	private String passwd;
 	private boolean enabled;
 	private final static int tamanioParrafo = 20;
-	private String direccion;
+	private String ruc;
 	private String telefono;
-	private String empresa;
+	private String razonSocial;
 	private String mail;
 	private String tipo_usuario;
 	private BusquedasRestantesDTO busquedasRestantesDTO;
 	private String codigoVerificador;
 	private Date fecha_caducidad;
-	
-	
+	private boolean temporal;
+
+	public boolean isTemporal() {
+		return temporal;
+	}
+
+	public void setTemporal(boolean temporal) {
+		this.temporal = temporal;
+	}
 
 	public Date getFecha_caducidad() {
 		return fecha_caducidad;
@@ -107,12 +114,20 @@ public class UsuarioDTO {
 		return tamanioParrafo;
 	}
 
-	public String getDireccion() {
-		return direccion;
+	public String getRuc() {
+		return ruc;
 	}
 
-	public void setDireccion(String direccion) {
-		this.direccion = direccion;
+	public void setRuc(String ruc) {
+		this.ruc = ruc;
+	}
+
+	public String getRazonSocial() {
+		return razonSocial;
+	}
+
+	public void setRazonSocial(String razonSocial) {
+		this.razonSocial = razonSocial;
 	}
 
 	public String getTelefono() {
@@ -121,14 +136,6 @@ public class UsuarioDTO {
 
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
-	}
-
-	public String getEmpresa() {
-		return empresa;
-	}
-
-	public void setEmpresa(String empresa) {
-		this.empresa = empresa;
 	}
 
 	public String getMail() {

@@ -18,7 +18,7 @@
 
 <script src="resources/Metro-UI-CSS-master/min/metro.min.js"></script>
 <script src="resources/Metro-UI-CSS-master/js/metro-dropdown.js"></script>
-
+<script src="resources/jquery/notify.min.js" type="text/javascript"></script>
 
 <!--  calendar -->
 <script
@@ -46,11 +46,47 @@
 		$('.input-control').inputControl();
 	});
 
+	
+	function validarMail(){
+		var textos = $('.ntext');
+		if($(textos[6]).val().indexOf('@', 0) == -1 || $(textos[6]).val().indexOf('.', 0) == -1) {  
+	        return false;  
+	    }  else {
+	    return true;  
+	    }
+		
+	}
+	
 	function validar() {
 		var passwd = $('.npasswd');
 		var textos = $('.ntext');
+		
+		var existeUsuario= false;
+		
+		
+		
+		//existe usuario
+		$.ajax({
+			type : "POST",
+			traditional : true,
+			async: false,
+			url : "existeUsuario.htm",
+			data : "nombreUsuario=" +$(textos[0]).val() ,
+			success : function(response) {
+				
+				existeUsuario=response;
+				
+			},
+			error : function(e) {
+				alert('Error: ' + e);
+			}
+		});
+		
+		
+		
+		if(!existeUsuario){
 
-		if ($('#combo').val() != 'Seleccione...') {
+		if (validarMail()) {
 
 			if ($(passwd[0]).val() == $(passwd[1]).val()
 					&& $(passwd[0]).val().trim() != ""
@@ -69,7 +105,8 @@
 							+ "&correoElectronico=" + $(textos[6]).val(),
 							
 					success : function(response) {
-						alert(response);
+						$('.metro').empty();
+						$('.metro').append(response);
 						
 
 					},
@@ -79,11 +116,26 @@
 				});
 
 			} else {
-				alert('las contrase&ntilde;as no coinciden.');
+				
+				$.notify(
+						"Las contrase&ntilde;as no coinciden.", 
+				  { position:"top-left" }
+				);
 			}
 		} else {
-			alert('Debe seleccionar un periodo de compra que debe coincidir con lo abonado.');
+			$.notify(
+					"El mail que ingreso no es valido", 
+			  { position:"top-left" }
+			);
 
+		}
+		}else {
+			$.notify(
+					"Ya existe ese usuario, por favor seleccione otro.", 
+			  { position:"top-left" }
+			);
+			
+			
 		}
 	}
 </script>
