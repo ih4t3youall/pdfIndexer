@@ -3,15 +3,61 @@ package ar.com.indexer.dominio;
 public class Usuario {
 
 	private int idUsuario;
-	private String nombre;
 	private String nombreUsuario;
-	private String apellido;
 	private String contrasenia;
+	private String nombre;
+	private String apellido;
+	private String razonSocial;
+	private String ruc;
+	private String telefono;
+	private String correoElectronico;
+	private boolean emitirFactura;
 	private boolean enabled;
+	
 	
 
 	
 	
+	public String getRazonSocial() {
+		return razonSocial;
+	}
+
+	public void setRazonSocial(String razonSocial) {
+		this.razonSocial = razonSocial;
+	}
+
+	public String getRuc() {
+		return ruc;
+	}
+
+	public void setRuc(String ruc) {
+		this.ruc = ruc;
+	}
+
+	public String getTelefono() {
+		return telefono;
+	}
+
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
+	}
+
+	public String getCorreoElectronico() {
+		return correoElectronico;
+	}
+
+	public void setCorreoElectronico(String correoElectronico) {
+		this.correoElectronico = correoElectronico;
+	}
+
+	public boolean isEmitirFactura() {
+		return emitirFactura;
+	}
+
+	public void setEmitirFactura(boolean emitirFactura) {
+		this.emitirFactura = emitirFactura;
+	}
+
 	public boolean isEnabled() {
 		return enabled;
 	}

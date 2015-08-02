@@ -157,6 +157,20 @@ ENGINE = InnoDB
 AUTO_INCREMENT = 57
 DEFAULT CHARACTER SET = latin1;
 
+-- -----------------------------------------------------
+-- Table `pdfindexer`.`usuario_temporal`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `pdfindexer`.`usuario_temporal` (
+  `idUsuarioTemporal` INT NOT NULL AUTO_INCREMENT,
+  `nombreUsuario` VARCHAR(45) NULL,
+  `apellido` VARCHAR(45) NULL,
+  `razonsocial` VARCHAR(45) NULL,
+  `ruc` VARCHAR(45) NULL,
+  `telefono` VARCHAR(45) NULL,
+  `mail` VARCHAR(45) NULL,
+  `passwd` VARCHAR(45) NULL,
+  PRIMARY KEY (`idUsuarioTemporal`))
+ENGINE = InnoDB
 
 -- -----------------------------------------------------
 -- Table `pdfindexer`.`user_roles`

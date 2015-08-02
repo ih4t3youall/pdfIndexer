@@ -5,17 +5,20 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
+import ar.com.indexer.bo.UsuarioBO;
 import ar.com.indexer.configuracion.Configuracion;
+import ar.com.indexer.dto.UsuarioTemporalDTO;
 
 @Controller
 public class LandingController {
 	
 	private Configuracion conf;
+	private UsuarioBO usuarioBO;
 
 	@RequestMapping("pruebe.htm")
 	public @ResponseBody
@@ -35,6 +38,45 @@ public class LandingController {
 
 	}
 
+	@RequestMapping("pruebeDerecha.htm")
+	public @ResponseBody
+	String pruebeDerecha() {
+		String texto = "";
+		try {
+			texto = leerArchivo("textoPruebeDerecha.txt");
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return texto;
+
+	}
+	
+	
+	@RequestMapping("/registroDePrueba.htm")
+	public void registroDePrueba(String passwd,String nombreUsuario,String apellido,String razonSocial,
+			String ruc,String telefono,String correoElectronico){
+	
+		UsuarioTemporalDTO usuarioTemporalDTO = new UsuarioTemporalDTO();
+		usuarioTemporalDTO.setPasswd(passwd);
+		usuarioTemporalDTO.setNombreUsuario(nombreUsuario);
+		usuarioTemporalDTO.setApellido(apellido);
+		usuarioTemporalDTO.setRazonSocial(razonSocial);
+		usuarioTemporalDTO.setRuc(ruc);
+		usuarioTemporalDTO.setTelefono(telefono);
+		usuarioTemporalDTO.setCorreoElectronico(correoElectronico);
+		usuarioBO.guardarUsuarioTemporal(usuarioTemporalDTO);
+		
+		
+		
+		
+	}
+	
+
 	public  String leerArchivo(String archivo)
 			throws FileNotFoundException, IOException {
 		String cadena;
@@ -48,6 +90,12 @@ public class LandingController {
 		buffer.close();
 		return texto;
 	}
+	@RequestMapping("pedirClave.htm")
+	public ModelAndView pedirClave(){
+		ModelAndView mav = new ModelAndView("fueraLogin/formularioPedirClave");
+		
+		return mav;
+	}
 
 	public  Configuracion getConf() {
 		return conf;
@@ -56,5 +104,15 @@ public class LandingController {
 	public  void setConf(Configuracion conf) {
 		this.conf = conf;
 	}
+
+	public UsuarioBO getUsuarioBO() {
+		return usuarioBO;
+	}
+
+	public void setUsuarioBO(UsuarioBO usuarioBO) {
+		this.usuarioBO = usuarioBO;
+	}
+	
+	
 
 }

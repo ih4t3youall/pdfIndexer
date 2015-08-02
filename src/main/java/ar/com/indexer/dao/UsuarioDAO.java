@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 import ar.com.indexer.dominio.Busqueda;
 import ar.com.indexer.dto.BusquedasRestantesDTO;
 import ar.com.indexer.dto.UsuarioDTO;
+import ar.com.indexer.dto.UsuarioTemporalDTO;
 import ar.com.indexer.rowMapper.BusquedaRowMapper;
 import ar.com.indexer.rowMapper.BusquedasRestantesRowMapper;
 import ar.com.indexer.rowMapper.StringRowMapper;
@@ -28,6 +29,13 @@ public class UsuarioDAO {
 		String sql ="select tipo_nombre from tipo_usuario";
 		List<String> tipos_usuarios = jdbcTemplate.query(sql, new StringRowMapper());
 		return tipos_usuarios;
+		
+	}
+	
+	public void saveUsuarioTemporal(UsuarioTemporalDTO usuarioTemporalDTO){
+		
+		
+		
 		
 	}
 
@@ -73,6 +81,19 @@ public class UsuarioDAO {
 
 	}
 
+	
+	public void saveTemporalUser(UsuarioTemporalDTO usuarioTemporalDTO) {
+
+		String sql ="insert into usuario_temporal (nombreUsuario,apellido,razonsocial,ruc,telefono,mail,passwd)values (?,?,?,?,?,?,?)";
+		jdbcTemplate.update(sql,new Object[]{usuarioTemporalDTO.getNombreUsuario(),usuarioTemporalDTO.getApellido(),usuarioTemporalDTO.getRazonSocial(),
+				usuarioTemporalDTO.getRuc(),usuarioTemporalDTO.getTelefono(),usuarioTemporalDTO.getCorreoElectronico(),usuarioTemporalDTO.getPasswd()});
+		
+		
+		
+	}
+
+	
+	
 	@Transactional(propagation = Propagation.REQUIRED, rollbackFor = Exception.class)
 	public int saveUsers(UsuarioDTO usuarioDTO) {
 		String sql = "insert into users (USERNAME,PASSWORD, ENABLED,nombre,apellido,direccion,telefono,empresa,mail,tipo_usuario,caduca) values (?,?,?,?,?,?,?,?,?,?,?)";
@@ -152,6 +173,7 @@ public class UsuarioDAO {
 	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
 		this.jdbcTemplate = jdbcTemplate;
 	}
+
 
 
 

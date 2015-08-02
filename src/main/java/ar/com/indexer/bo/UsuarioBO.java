@@ -6,6 +6,7 @@ import ar.com.indexer.dao.UsuarioDAO;
 import ar.com.indexer.dominio.CodigoVerificador;
 import ar.com.indexer.dto.BusquedasRestantesDTO;
 import ar.com.indexer.dto.UsuarioDTO;
+import ar.com.indexer.dto.UsuarioTemporalDTO;
 import ar.com.indexer.exceptions.UsuarioCaducadoException;
 import ar.com.indexer.utilitis.FechaUtility;
 
@@ -16,6 +17,14 @@ public class UsuarioBO {
 	private BusquedaBO busquedaBO;
 	private CodigosBO codigosBO;
 	
+	
+
+	public void guardarUsuarioTemporal(UsuarioTemporalDTO usuarioTemporalDTO) {
+		
+		usuarioDAO.saveTemporalUser(usuarioTemporalDTO);
+		
+	}
+
 	
 	public void altaBajaUsuario(UsuarioDTO usuarioDTOIncompleto) {
 	
@@ -147,6 +156,7 @@ public class UsuarioBO {
 	public void setCodigosBO(CodigosBO codigosBO) {
 		this.codigosBO = codigosBO;
 	}
+
 
 
 

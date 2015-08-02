@@ -13,6 +13,9 @@
 		<intercept-url pattern="/crearCuenta.htm" access="ROLE_ANONYMOUS" />
 		<intercept-url pattern="/doAgregarUsuario.htm" access="ROLE_ANONYMOUS" />
 		<intercept-url pattern="/pruebe.htm" access="ROLE_ANONYMOUS" />
+		<intercept-url pattern="/pruebeDerecha.htm" access="ROLE_ANONYMOUS" />
+		<intercept-url pattern="/pedirClave.htm" access="ROLE_ANONYMOUS" />
+		<intercept-url pattern="/registroDePrueba.htm" access="ROLE_ANONYMOUS" />
 		
 		<intercept-url pattern="/*" access="ROLE_USER" />
 		<intercept-url pattern="/admin*" access="ROLE_ADMIN"/>

@@ -68,7 +68,7 @@ function pruebe(){
 	$.ajax({
 		type : "POST",
 		traditional : true,
-		url : "pruebeParteDerecha.htm",
+		url : "pruebeDerecha.htm",
 	        datatype : "text/json",
 		success : function(response) {
 	
@@ -80,6 +80,7 @@ function pruebe(){
 	console.log(e);
 		}
 	});
+	document.getElementById("derecha").style.padding = "50px 10px 20px 30px";
 	
 	
 	
