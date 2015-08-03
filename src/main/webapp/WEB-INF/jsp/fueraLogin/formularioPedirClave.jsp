@@ -206,6 +206,7 @@
 					<input type="button" onclick="validar()" value="aceptar" )/>
 					</fieldset>
 					</form>
+					<input type="button" value="volver"onClick="location.href = 'welcome.htm' "/>
 				</div>
 
 			</div>

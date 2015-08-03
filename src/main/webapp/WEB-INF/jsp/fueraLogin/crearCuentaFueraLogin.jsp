@@ -38,6 +38,7 @@
 						<br>
 						<input type="submit" value="Submit"/>
 					</form:form>
+					<input type="button" value="volver"onClick="location.href = 'welcome.htm' "/>
 
 
 
