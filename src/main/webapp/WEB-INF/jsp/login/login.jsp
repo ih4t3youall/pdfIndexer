@@ -170,8 +170,8 @@ function pruebe(){
 			<form class="metro" name='f' action="<c:url value='j_spring_security_check' />"
 			method='POST'>
 			
-			 <img style="width: 310px"
-				src="resources/imagenes/login/semanagratis.png" />
+			 <a href="pedirClave.htm"><img style="width: 310px"
+				src="resources/imagenes/login/semanagratis.png" /></a>
 			<p>usuario</p>
 			<div data-role="input-control" class="input-control text"><input style="width: 200px"
 						class="form-control input-sm texto" type='text'  placeholder="type text" name='j_username'

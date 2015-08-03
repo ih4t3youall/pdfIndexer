@@ -43,18 +43,37 @@ public class BuscarThreads implements Runnable {
 	}
 	
 	
-	public static String sinAcentos(String input) {
-	    // Cadena de caracteres original a sustituir.
-	    String original = "áàäéèëíìïóòöúùuñÁÀÄÉÈËÍÌÏÓÒÖÚÙÜÑçÇ";
-	    // Cadena de caracteres ASCII que reemplazarán los originales.
-	    String ascii = "aaaeeeiiiooouuunAAAEEEIIIOOOUUUNcC";
-	    String output = input;
-	    for (int i=0; i<original.length(); i++) {
-	        // Reemplazamos los caracteres especiales.
-	        output = output.replace(original.charAt(i), ascii.charAt(i));
-	    }//for i
-	    return output;
-	}//remove1
+//	public static String sinAcentos(String input) {
+//	    // Cadena de caracteres original a sustituir.
+//	    String original = "áàäéèëíìïóòöúùuñÁÀÄÉÈËÍÌÏÓÒÖÚÙÜÑçÇ";
+//	    // Cadena de caracteres ASCII que reemplazarán los originales.
+//	    String ascii = "aaaeeeiiiooouuunAAAEEEIIIOOOUUUNcC";
+//	    String output = input;
+//	    for (int i=0; i<original.length(); i++) {
+//	        // Reemplazamos los caracteres especiales.
+//	        output = output.replace(original.charAt(i), ascii.charAt(i));
+//	    }//for i
+//	    return output;
+//	}//remove1
+	
+	
+	public static String sinAcentos(String string) {
+		String original = "��������������u��ˀ���������􆄍���':";
+		String ascii = "aaaeeeiiiooouuunAAAEEEIIIOOOUUUNcCu   ";
+
+        if (string != null) {
+			//Recorro la cadena y remplazo los caracteres originales por aquellos sin acentos
+			for (int i = 0; i < original.length(); i++ ) {
+	            string = string.replace(original.charAt(i), ascii.charAt(i));
+	        }
+
+		//Establezco todos los caracteres a min�scula.
+	        string = string.toLowerCase();
+
+        }
+        return string;
+	}
+	
 
 	public void run() {
 

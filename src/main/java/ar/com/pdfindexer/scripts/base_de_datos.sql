@@ -186,22 +186,7 @@ AUTO_INCREMENT = 4
 DEFAULT CHARACTER SET = utf8;
 
 
--- -----------------------------------------------------
--- Table `pdfindexer`.`usuario_temporal`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `pdfindexer`.`usuario_temporal` (
-  `idUsuarioTemporal` INT(11) NOT NULL AUTO_INCREMENT,
-  `nombreUsuario` VARCHAR(45) NULL DEFAULT NULL,
-  `apellido` VARCHAR(45) NULL DEFAULT NULL,
-  `razonsocial` VARCHAR(45) NULL DEFAULT NULL,
-  `ruc` VARCHAR(45) NULL DEFAULT NULL,
-  `telefono` VARCHAR(45) NULL DEFAULT NULL,
-  `mail` VARCHAR(45) NULL DEFAULT NULL,
-  `passwd` VARCHAR(45) NULL DEFAULT NULL,
-  PRIMARY KEY (`idUsuarioTemporal`))
-ENGINE = InnoDB
-AUTO_INCREMENT = 6
-DEFAULT CHARACTER SET = latin1;
+
 
 
 SET SQL_MODE=@OLD_SQL_MODE;

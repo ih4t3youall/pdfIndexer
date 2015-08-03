@@ -147,7 +147,7 @@
 				<div class="example">
 					<form>
 						<fieldset>
-							<legend>Agregar Usuario</legend>
+							<legend>Pedir clave</legend>
 							<label>Nombre usuario</label>
 							<div data-role="input-control" class="input-control text">
 								<input type="text" class="ntext" placeholder="type text">
