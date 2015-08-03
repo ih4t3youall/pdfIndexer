@@ -73,11 +73,10 @@ public class UsuarioController {
 		boolean existeNombreUsuario = usuarioBO.existeNombreUsuario(nombreUsuario);
 		
 		
-		if (existeNombreUsuario ==  true){
+		if(existeNombreUsuario){
+			
 			return "true";
-			
 		}else {
-			
 			return "false";
 			
 		}

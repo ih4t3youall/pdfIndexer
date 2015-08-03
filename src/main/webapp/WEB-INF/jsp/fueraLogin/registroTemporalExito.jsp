@@ -1,7 +1,7 @@
 <html>
 
 <head>
-<META HTTP-EQUIV="REFRESH" CONTENT="5;URL=welcome.htm"> 
+<META HTTP-EQUIV="REFRESH" CONTENT="5;URL=welcome.htm">
 
 <script src="resources/metrostyle/jquery/jquery.js"
 	type="text/javascript"></script>
@@ -25,11 +25,16 @@
 				<div class="example">
 
 
-					<label>Su cuenta se creo con exito, en menos de 24hs recibira un mail con su clave para registrarse al sistema, por favor haga click <a href="welcome.htm">aqui</a>.
+					<label>Su cuenta se creo con exito, en menos de 24hs
+						recibira un mail con su clave para registrarse al sistema, por
+						favor haga click <a href="welcome.htm">aqui</a>.
 					</label>
 
 
 				</div>
+			</div>
+		</div>
+	</div>
 </body>
 
 </html>

@@ -2,12 +2,14 @@ package ar.com.indexer.bo;
 
 import java.util.List;
 
+import org.springframework.dao.EmptyResultDataAccessException;
+
 import ar.com.indexer.dao.UsuarioDAO;
 import ar.com.indexer.dominio.CodigoVerificador;
 import ar.com.indexer.dto.BusquedasRestantesDTO;
 import ar.com.indexer.dto.UsuarioDTO;
-import ar.com.indexer.dto.UsuarioTemporalDTO;
 import ar.com.indexer.exceptions.UsuarioCaducadoException;
+import ar.com.indexer.exceptions.UsuarioException;
 import ar.com.indexer.utilitis.FechaUtility;
 
 public class UsuarioBO {
@@ -19,12 +21,54 @@ public class UsuarioBO {
 	
 	
 
-	public void guardarUsuarioTemporal(UsuarioTemporalDTO usuarioTemporalDTO) {
-		
-		usuarioDAO.saveTemporalUser(usuarioTemporalDTO);
-		
+	public void guardarUsuarioTemporal(UsuarioDTO usuarioDTO) {
+		usuarioDTO.setTemporal(true);
+		usuarioDTO.setEnabled(false);
+		crearNuevoUsuario(usuarioDTO);
 	}
 
+	
+	public void actualizarUsuarioTemporal(UsuarioDTO usuarioDTO2) {
+	
+		usuarioDAO.updateTemporalUser(usuarioDTO2);
+		
+	}
+	
+	
+	public void verificarUsuario(UsuarioDTO usuarioDTO) throws UsuarioException {
+	
+		boolean existeNombreUsuario = existeNombreUsuario(usuarioDTO.getNombreUsuario());
+		
+		UsuarioDTO usuarioByUsername = usuarioDAO.getUsuarioByUsername(usuarioDTO.getNombreUsuario());
+		
+		
+		
+		if (existeNombreUsuario) {
+		
+			
+			if(usuarioByUsername.getPasswd().equals(usuarioDTO.getPasswd())){
+				try{
+				codigosBO.updateTemporalUser(usuarioDTO);
+				}catch(EmptyResultDataAccessException e){
+					throw new UsuarioException("El codigo verificador es invalido.");
+				}
+				
+				
+			}else {
+				
+				throw new UsuarioException("Las contrasenias no coinciden");
+				
+			}
+			
+			
+			
+		}else {
+			throw new UsuarioException("El nombre de usuario no existe");
+		}
+		
+		
+	}
+	
 	
 	public void altaBajaUsuario(UsuarioDTO usuarioDTOIncompleto) {
 	
@@ -52,7 +96,7 @@ public class UsuarioBO {
 		return usuarioDAO.getTypeByCodeId(codigoVerificador.getIdTipoUsuario());
 		
 	}
-	
+	//crea el usuario para el usuarioDTO que es un objeto instancia para tener los datos de logueo
 	public void crearUsuario(String username) throws UsuarioCaducadoException {
 
 		  UsuarioDTO usuario = usuarioDAO.getUsuarioByUsername(username);
@@ -158,6 +202,11 @@ public class UsuarioBO {
 	public void setCodigosBO(CodigosBO codigosBO) {
 		this.codigosBO = codigosBO;
 	}
+
+
+
+
+	
 
 
 

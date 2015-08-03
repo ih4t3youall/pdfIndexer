@@ -12,7 +12,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import ar.com.indexer.bo.UsuarioBO;
 import ar.com.indexer.configuracion.Configuracion;
-import ar.com.indexer.dto.UsuarioTemporalDTO;
+import ar.com.indexer.dto.UsuarioDTO;
+import ar.com.indexer.exceptions.UsuarioException;
 
 @Controller
 public class LandingController {
@@ -58,18 +59,19 @@ public class LandingController {
 	
 	
 	@RequestMapping("/registroDePrueba.htm")
-	public ModelAndView registroDePrueba(String passwd,String nombreUsuario,String apellido,String razonSocial,
+	public ModelAndView registroDePrueba(String passwd,String nombreUsuario,String nombre,String apellido,String razonSocial,
 			String ruc,String telefono,String correoElectronico){
 	
-		UsuarioTemporalDTO usuarioTemporalDTO = new UsuarioTemporalDTO();
-		usuarioTemporalDTO.setPasswd(passwd);
-		usuarioTemporalDTO.setNombreUsuario(nombreUsuario);
-		usuarioTemporalDTO.setApellido(apellido);
-		usuarioTemporalDTO.setRazonSocial(razonSocial);
-		usuarioTemporalDTO.setRuc(ruc);
-		usuarioTemporalDTO.setTelefono(telefono);
-		usuarioTemporalDTO.setCorreoElectronico(correoElectronico);
-		usuarioBO.guardarUsuarioTemporal(usuarioTemporalDTO);
+		UsuarioDTO usuarioDTO = new UsuarioDTO();
+		usuarioDTO.setPasswd(passwd);
+		usuarioDTO.setNombreUsuario(nombreUsuario);
+		usuarioDTO.setNombre(nombre);
+		usuarioDTO.setApellido(apellido);
+		usuarioDTO.setRazonSocial(razonSocial);
+		usuarioDTO.setRuc(ruc);
+		usuarioDTO.setTelefono(telefono);
+		usuarioDTO.setMail(correoElectronico);
+		usuarioBO.guardarUsuarioTemporal(usuarioDTO);
 		
 		ModelAndView mav = new ModelAndView("fueraLogin/registroTemporalExito");
 		
@@ -97,6 +99,34 @@ public class LandingController {
 		
 		return mav;
 	}
+	
+	@RequestMapping("crearCuentaConClaveLogin.htm")
+	public ModelAndView crearCuentaConClaveLogin(){
+		ModelAndView mav = new ModelAndView("fueraLogin/crearCuentaFueraLogin");
+		mav.addObject("usuarioDTO",new UsuarioDTO());
+		return mav;
+		
+	}
+	
+	@RequestMapping("crearCuentaConClave.htm")
+	public ModelAndView crearCuentaConClave(UsuarioDTO usuarioDTO){
+		
+		
+		try {
+			usuarioBO.verificarUsuario(usuarioDTO);
+		} catch (UsuarioException e) {
+			
+			ModelAndView mav = new ModelAndView("fueraLogin/error");
+			mav.addObject("error",e.getMensajeAMostrar());
+			return mav;
+		}
+		
+		ModelAndView mav =new ModelAndView("fueraLogin/exito");
+		
+		return mav;
+		
+	}
+	
 
 	public  Configuracion getConf() {
 		return conf;

@@ -66,6 +66,7 @@ CREATE TABLE IF NOT EXISTS `pdfindexer`.`users` (
   `tipo_usuario` VARCHAR(45) NULL DEFAULT NULL,
   `caduca` DATE NULL DEFAULT NULL,
   `temporal` TINYINT(1) NULL,
+  `bcp` VARCHAR(45) NULL DEFAULT NULL,
   PRIMARY KEY (`USER_ID`),
   UNIQUE INDEX `USERNAME_UNIQUE` (`USERNAME` ASC))
 ENGINE = InnoDB
@@ -213,7 +214,7 @@ INSERT INTO pdfindexer.users (USERNAME,PASSWORD, ENABLED,nombre,apellido,razonso
 VALUES ('root', 'root', TRUE,'martin','lquerica','razonsocial','4220929','ruc','sourceSistemas@gmail.com','vip','2100-03-10',true);
  
 INSERT INTO pdfindexer.user_roles ( USER_ID,AUTHORITY)
-VALUES ( 1, 'ROLE_USER');
+VALUES ( 22, 'ROLE_USER');
 
 insert into tipo_usuario (tipo_nombre,dia,semana,mes) values ('estandard',3,3,3);
 insert into tipo_usuario (tipo_nombre,dia,semana,mes) values ('advance',6,6,6);

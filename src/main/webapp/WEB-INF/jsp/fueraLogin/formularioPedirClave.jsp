@@ -84,7 +84,7 @@
 		
 		
 		
-		if(!existeUsuario){
+		if(existeUsuario == 'false'){
 
 		if (validarMail()) {
 

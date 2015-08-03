@@ -30,6 +30,20 @@ public class CodigosBO {
 		
 	}
 	
+	public void updateTemporalUser(UsuarioDTO usuarioDTO){
+		
+		CodigoVerificador codigoVerificador = codigosDAO.useCode(usuarioDTO);
+		
+		String tipo_usuario = usuarioBO.obtenerTipoDeUsuarioPorCodigo(codigoVerificador);
+		
+		usuarioDTO.setFecha_caducidad(FechaUtility.sumarFechasDias(FechaUtility.getFechaActual(), codigoVerificador.getDias()));
+		usuarioDTO.setTipo_usuario(tipo_usuario);
+		usuarioDTO.setCodigoVerificador(null);
+		usuarioBO.actualizarUsuarioTemporal(usuarioDTO);
+		
+	}
+	
+	
 	public void usarCodigo(UsuarioDTO usuarioDTO){
 		
 		CodigoVerificador codigoVerificador = codigosDAO.useCode(usuarioDTO);

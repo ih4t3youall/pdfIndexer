@@ -31,13 +31,14 @@ public class UsuarioDAO {
 		return tipos_usuarios;
 		
 	}
+	public void updateTemporalUser(UsuarioDTO usuarioDTO2) {
 	
-	public void saveUsuarioTemporal(UsuarioTemporalDTO usuarioTemporalDTO){
 		
-		
-		
+		String sql ="update users set temporal=false,enabled=true,tipo_usuario=?,caduca=? where users.USERNAME = ?";
+		jdbcTemplate.update(sql,new Object[]{usuarioDTO2.getTipo_usuario(),usuarioDTO2.getFecha_caducidad(),usuarioDTO2.getNombreUsuario()});
 		
 	}
+
 
 	
 	
@@ -173,6 +174,13 @@ public class UsuarioDAO {
 	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
 		this.jdbcTemplate = jdbcTemplate;
 	}
+
+
+
+
+
+
+	
 
 
 
