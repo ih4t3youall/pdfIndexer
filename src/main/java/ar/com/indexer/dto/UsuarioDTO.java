@@ -2,6 +2,8 @@ package ar.com.indexer.dto;
 
 import java.sql.Date;
 
+import ar.com.indexer.dominio.Bcp;
+
 public class UsuarioDTO {
 
 	private int idUsuario;
@@ -12,6 +14,7 @@ public class UsuarioDTO {
 	private boolean enabled;
 	private final static int tamanioParrafo = 20;
 	private String ruc;
+	private BcpDTO bcp;
 	private String telefono;
 	private String razonSocial;
 	private String mail;
@@ -20,6 +23,19 @@ public class UsuarioDTO {
 	private String codigoVerificador;
 	private Date fecha_caducidad;
 	private boolean temporal;
+
+	
+	
+	
+
+
+	public BcpDTO getBcp() {
+		return bcp;
+	}
+
+	public void setBcp(BcpDTO bcp) {
+		this.bcp = bcp;
+	}
 
 	public boolean isTemporal() {
 		return temporal;

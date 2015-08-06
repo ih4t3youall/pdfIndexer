@@ -20,6 +20,7 @@ import ar.com.indexer.dominio.Termino;
 import ar.com.indexer.dto.BusquedaDTO;
 import ar.com.indexer.objetos.ListaFrase;
 import ar.com.indexer.paginador.PrintTextLocations;
+import ar.com.indexer.utilitis.HtmlUtility;
 
 public class BuscarThreads implements Runnable {
 
@@ -43,36 +44,6 @@ public class BuscarThreads implements Runnable {
 	}
 	
 	
-//	public static String sinAcentos(String input) {
-//	    // Cadena de caracteres original a sustituir.
-//	    String original = "√°√†√§√©√®√´√≠√¨√Ø√≥√≤√∂√∫√πu√±√Å√Ä√Ñ√â√à√ã√ç√å√è√ì√í√ñ√ö√ô√ú√ë√ß√á";
-//	    // Cadena de caracteres ASCII que reemplazar√°n los originales.
-//	    String ascii = "aaaeeeiiiooouuunAAAEEEIIIOOOUUUNcC";
-//	    String output = input;
-//	    for (int i=0; i<original.length(); i++) {
-//	        // Reemplazamos los caracteres especiales.
-//	        output = output.replace(original.charAt(i), ascii.charAt(i));
-//	    }//for i
-//	    return output;
-//	}//remove1
-	
-	
-	public static String sinAcentos(String string) {
-		String original = "áàäéèëíìïóòöúùuñÁÀÄÉÈËÍÌÏÓÒÖÚÙÜÑçÇü·':";
-		String ascii = "aaaeeeiiiooouuunAAAEEEIIIOOOUUUNcCu   ";
-
-        if (string != null) {
-			//Recorro la cadena y remplazo los caracteres originales por aquellos sin acentos
-			for (int i = 0; i < original.length(); i++ ) {
-	            string = string.replace(original.charAt(i), ascii.charAt(i));
-	        }
-
-		//Establezco todos los caracteres a minúscula.
-	        string = string.toLowerCase();
-
-        }
-        return string;
-	}
 	
 
 	public void run() {
@@ -139,9 +110,9 @@ public class BuscarThreads implements Runnable {
 				for (int i = 0; i < words.size(); i++) {
 
 					String aux = words.get(i).getPalabra().toLowerCase();
-					aux = sinAcentos(aux);
+					aux = HtmlUtility.sinAcentos(aux);
 					
-					if (sinAcentos(textoPagina.toLowerCase()).contains(aux)) {
+					if (HtmlUtility.sinAcentos(textoPagina.toLowerCase()).contains(aux)) {
 						contains = true;
 						palabra = aux;
 					}

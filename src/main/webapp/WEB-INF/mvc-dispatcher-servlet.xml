@@ -77,6 +77,8 @@
 	<bean id="landingController" class="ar.com.indexer.controllers.LandingController">
 		<property name="conf" ref="configuracion"></property>
 		<property name="usuarioBO" ref="usuarioBO" />
+		<property name="usuarioDTO" ref="usuarioDTO"></property>
+		<property name="bcpBO" ref="bcpBO"></property>
 	</bean>
 
 
@@ -113,10 +115,24 @@
 		<property name="conf" ref="configuracion" />
 	</bean>
 
+
+		<bean id="bcpDAO" class="ar.com.indexer.dao.BcpDAO">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+
+	</bean>
+	<bean id="bcpBO" class="ar.com.indexer.bo.BcpBO">
+
+		<property name="bcpDAO" ref="bcpDAO" />
+	</bean>
+
+
 	<bean id="codigosDAO" class="ar.com.indexer.dao.CodigosDAO">
 		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
 
 	</bean>
+	
+
+	
 	<bean id="codigosBO" class="ar.com.indexer.bo.CodigosBO">
 
 		<property name="codigosDAO" ref="codigosDAO" />

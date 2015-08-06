@@ -86,6 +86,12 @@ function pruebe(){
 	
 }
 
+function compre(){
+	
+	
+	
+}
+
 </script>
 
 
@@ -110,12 +116,12 @@ function pruebe(){
 
 <div  id="navegador">
 <ul>
-<li><a href="#"><img class="menuN" src="resources/imagenes/imagenesMenu/bienvenido.png" alt="descripcion" /></a></li>
-<li><a href="#"><img class="menuN" src="resources/imagenes/imagenesMenu/porque.png" alt="descripcion" /></a></li>
-<li><a href="#"><img class="menuN" src="resources/imagenes/imagenesMenu/comofunciona.png" alt="descripcion" /></a></li>
-<li><a onclick="pruebe()" ><img class="menuN" src="resources/imagenes/imagenesMenu/pruebe.png" alt="descripcion" /></a></li>
-<li><a href="#"><img class="menuN" src="resources/imagenes/imagenesMenu/compre.png" alt="descripcion" /></a></li>
-<li><a href="#"><img class="menuN" src="resources/imagenes/imagenesMenu/conectese.png" alt="descripcion" /></a></li>
+<li><a href="#"><img class="menuN" src="resources/imagenes/imagenesMenu/bienvenido.png" alt="bienvenido" /></a></li>
+<li><a href="#"><img class="menuN" src="resources/imagenes/imagenesMenu/porque.png" alt="porque nosotros" /></a></li>
+<li><a href="#"><img class="menuN" src="resources/imagenes/imagenesMenu/comofunciona.png" alt="como funciona" /></a></li>
+<li><a onclick="pruebe()" ><img class="menuN" src="resources/imagenes/imagenesMenu/pruebe.png" alt="pruebe" /></a></li>
+<li><a onclick="compre()"><img class="menuN" src="resources/imagenes/imagenesMenu/compre.png" alt="compre" /></a></li>
+<li><a href="#"><img class="menuN" src="resources/imagenes/imagenesMenu/conectese.png" alt="conectese" /></a></li>
 
 </ul>
 </div>
