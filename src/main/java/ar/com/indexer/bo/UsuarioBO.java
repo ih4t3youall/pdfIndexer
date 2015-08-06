@@ -21,10 +21,10 @@ public class UsuarioBO {
 	
 	
 
-	public void guardarUsuarioTemporal(UsuarioDTO usuarioDTO) {
+	public int guardarUsuarioTemporal(UsuarioDTO usuarioDTO) {
 		usuarioDTO.setTemporal(true);
 		usuarioDTO.setEnabled(false);
-		crearNuevoUsuario(usuarioDTO);
+		return crearNuevoUsuario(usuarioDTO);
 	}
 
 	
@@ -145,18 +145,20 @@ public class UsuarioBO {
 		usuarioDAO.updateUserPasswd(usuarioDTO);
 	}
 
-	public void crearNuevoUsuario(UsuarioDTO usuarioDTO) {
+	public int crearNuevoUsuario(UsuarioDTO usuarioDTO) {
 
 		if(usuarioDTO.getCodigoVerificador() == null){
 			int id = usuarioDAO.saveUsers(usuarioDTO);
 			
 			usuarioDAO.saveRoleUser(id);
+			return id;
 			
 		}else{
 				
 			codigosBO.usarCodigo(usuarioDTO);
 			
 		}
+		return 0;
 	}
 	
 	
