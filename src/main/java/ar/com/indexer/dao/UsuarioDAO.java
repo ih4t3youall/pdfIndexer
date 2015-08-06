@@ -82,6 +82,14 @@ public class UsuarioDAO {
 
 	}
 
+	public List<UsuarioDTO> getAllTemporalUsers() {
+
+		String sql="select * from users where temporal = 1";
+		List<UsuarioDTO> query = jdbcTemplate.query(sql, new UsuarioRowMapper());
+		return query;
+	}
+
+	
 	
 	public void saveTemporalUser(UsuarioTemporalDTO usuarioTemporalDTO) {
 

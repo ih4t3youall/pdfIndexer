@@ -284,6 +284,16 @@ public class AjaxController {
 		mav.addObject("listaCodigosDTO", obtenerClavesNoUtilizadas);
 		return mav;
 	}
+	
+	@RequestMapping("aceptarUsuariosTemporales.htm")
+	public ModelAndView aceptarUsuariosTemporales(){
+		List<UsuarioDTO> usuariosTemporales = usuarioBO.obtenerTodosLosUsuariosTemporales();
+		ModelAndView mav =  new ModelAndView("usuariosTemporales/tablaUsuariosTemporales");
+		mav.addObject("usuarioDTO",usuariosTemporales);
+		return mav;
+	}
+	
+	
 
 	@RequestMapping("eliminarUsuario.htm")
 	public @ResponseBody

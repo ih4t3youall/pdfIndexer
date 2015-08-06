@@ -161,6 +161,16 @@ public class UsuarioBO {
 		return 0;
 	}
 	
+
+	public List<UsuarioDTO> obtenerTodosLosUsuariosTemporales() {
+
+		return usuarioDAO.getAllTemporalUsers();
+		
+		
+	}
+
+
+
 	
 	public List<String> obtenerTiposDeusuario(){
 		

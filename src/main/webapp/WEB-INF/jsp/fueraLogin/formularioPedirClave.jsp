@@ -47,88 +47,97 @@
 		$('.input-control').inputControl();
 	});
 
-	function validarMail() {
+	
+	function validarMail(){
 		var textos = $('.ntext');
-		if ($(textos[6]).val().indexOf('@', 0) == -1
-				|| $(textos[6]).val().indexOf('.', 0) == -1) {
-			return false;
-		} else {
-			return true;
-		}
-
+		if($(textos[6]).val().indexOf('@', 0) == -1 || $(textos[6]).val().indexOf('.', 0) == -1) {  
+	        return false;  
+	    }  else {
+	    return true;  
+	    }
+		
 	}
-
+	
 	function validar() {
 		var passwd = $('.npasswd');
 		var textos = $('.ntext');
-
-		var existeUsuario = false;
-
+		
+		var existeUsuario= false;
+		
+		
+		
 		//existe usuario
 		$.ajax({
 			type : "POST",
 			traditional : true,
-			async : false,
+			async: false,
 			url : "existeUsuario.htm",
-			data : "nombreUsuario=" + $(textos[0]).val(),
+			data : "nombreUsuario=" +$(textos[0]).val() ,
 			success : function(response) {
-
-				existeUsuario = response;
-
+				
+				existeUsuario=response;
+				
 			},
 			error : function(e) {
 				alert('Error: ' + e);
 			}
 		});
+		
+		
+		
+		if(existeUsuario == 'false'){
 
-		if (existeUsuario == 'false') {
+		if (validarMail()) {
 
-			if (validarMail()) {
+			if ($(passwd[0]).val() == $(passwd[1]).val()
+					&& $(passwd[0]).val().trim() != ""
+					&& $(passwd[1]).val().trim() != "") {
 
-				if ($(passwd[0]).val() == $(passwd[1]).val()
-						&& $(passwd[0]).val().trim() != ""
-						&& $(passwd[1]).val().trim() != "") {
+				$.ajax({
+					type : "POST",
+					traditional : true,
+					url : "registroDePrueba.htm",
+					data : "passwd=" + $(passwd[0]).val() + "&nombreUsuario="
+							+ $(textos[0]).val() + "&nombre="
+							+ $(textos[1]).val() + "&apellido="
+							+ $(textos[2]).val() + "&razonSocial="
+							+ $(textos[3]).val() + "&ruc=" + $(textos[4]).val()
+							+ "&telefono=" + $(textos[5]).val()
+							+ "&correoElectronico=" + $(textos[6]).val(),
+							
+					success : function(response) {
+						$('.metro').empty();
+						$('.metro').append(response);
+						
 
-					$.ajax({
-						type : "POST",
-						traditional : true,
-						url : "registroDePrueba.htm",
-						data : "passwd=" + $(passwd[0]).val()
-								+ "&nombreUsuario=" + $(textos[0]).val()
-								+ "&nombre=" + $(textos[1]).val()
-								+ "&apellido=" + $(textos[2]).val()
-								+ "&razonSocial=" + $(textos[3]).val()
-								+ "&ruc=" + $(textos[4]).val() + "&telefono="
-								+ $(textos[5]).val() + "&correoElectronico="
-								+ $(textos[6]).val(),
-
-						success : function(response) {
-							$('.metro').empty();
-							$('.metro').append(response);
-
-						},
-						error : function(e) {
-							alert('Error: ' + e);
-						}
-					});
-
-				} else {
-
-					$.notify("Las contrase&ntilde;as no coinciden.", {
-						position : "top-left"
-					});
-				}
-			} else {
-				$.notify("El mail que ingreso no es valido", {
-					position : "top-left"
+					},
+					error : function(e) {
+						alert('Error: ' + e);
+					}
 				});
 
+		
+			} else {
+				
+				$.notify(
+						"Las contrase&ntilde;as no coinciden.", 
+				  { position:"top-left" }
+				);
 			}
 		} else {
-			$.notify("Ya existe ese usuario, por favor seleccione otro.", {
-				position : "top-left"
-			});
+			$.notify(
+					"El mail que ingreso no es valido", 
+			  { position:"top-left" }
+			);
 
+		}
+		}else {
+			$.notify(
+					"Ya existe ese usuario, por favor seleccione otro.", 
+			  { position:"top-left" }
+			);
+			
+			
 		}
 	}
 </script>
@@ -138,11 +147,68 @@
 		<div class="row">
 			<div class="span6 offset4">
 				<div class="example">
-					
-					
-					<jsp:include page="../fueraLogin/formularioCrearCuenta.jsp" flush="true" />
-					<input type="button" value="volver"
-						onClick="location.href = 'welcome.htm' " />
+					<form>
+						<fieldset>
+							<legend>Pedir clave</legend>
+							<label>Nombre usuario</label>
+							<div data-role="input-control" class="input-control text">
+								<input type="text" class="ntext" placeholder="type text">
+								<button tabindex="-1" class="btn-clear" type="button"></button>
+							</div>
+							<label>Password</label>
+							<div data-role="input-control" class="input-control password">
+								<input class="npasswd" type="password" autofocus=""
+									placeholder="type">
+								<button tabindex="-1" class="btn-reveal" type="button"></button>
+							</div>
+							<label>Repita Password</label>
+							<div data-role="input-control" class="input-control password">
+								<input class="npasswd" type="password" autofocus=""
+									placeholder="type ">
+								<button tabindex="-1" class="btn-reveal" type="button"></button>
+							</div>
+
+
+							<label>Nombre</label>
+							<div data-role="input-control" class="input-control text">
+								<input type="text" class="ntext" placeholder="type text">
+								<button tabindex="-1" class="btn-clear" type="button"></button>
+							</div>
+							<label>Apellido</label>
+							<div data-role="input-control" class="input-control text">
+								<input type="text" class="ntext" placeholder="type text">
+								<button tabindex="-1" class="btn-clear" type="button"></button>
+							</div>
+							<label>Razon social</label>
+							<div data-role="input-control" class="input-control text">
+								<input type="text" class="ntext" placeholder="type text">
+								<button tabindex="-1" class="btn-clear" type="button"></button>
+							</div>
+							<label>R.U.C.</label>
+							<div data-role="input-control" class="input-control text">
+								<input type="text" class="ntext" placeholder="type text">
+								<button tabindex="-1" class="btn-clear" type="button"></button>
+							</div>
+							<label>Telefono</label>
+							<div data-role="input-control" class="input-control text">
+								<input type="text" class="ntext" placeholder="type text">
+								<button tabindex="-1" class="btn-clear" type="button"></button>
+							</div>
+							<label>Correo electronico</label>
+							<div data-role="input-control" class="input-control text">
+								<input type="text" class="ntext" placeholder="type text">
+								<button tabindex="-1" class="btn-clear" type="button"></button>
+							</div>
+
+						
+				</div>
+
+				<div>
+
+					<input type="button" onclick="validar()" value="aceptar" )/>
+					</fieldset>
+					</form>
+					<input type="button" value="volver"onClick="location.href = 'welcome.htm' "/>
 				</div>
 
 			</div>

@@ -247,6 +247,21 @@
 		});
 
 	}
+	
+	function aceptarUsuariosTemporales(){
+		
+		esconder();
+		$('#contenedor_secundario').empty();
+		$.ajax({
+
+			url : "aceptarUsuariosTemporales.htm",
+			context : document.body
+		}).done(function(response) {
+			$("#contenedor_secundario").html(response);
+		});
+		
+		
+	}
 
 	function agregarUsuario() {
 		esconder();
@@ -344,6 +359,7 @@
 									<li><a onclick="agregarUsuario();">Agregar Usuario</a></li>
 									<li><a onclick="altaUsuario();">Dar Usuario de
 											alta/baja</a></li>
+											<li><a onclick="aceptarUsuariosTemporales();">Usuarios temporales</a></li>
 									<li><a onclick="generarClaves();">Generar claves</a></li>
 									<li><a onclick="verClavesNoUtilizadas();">Ver claves
 											no utilizadas</a></li>
