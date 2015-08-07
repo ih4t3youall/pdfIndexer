@@ -1,20 +1,14 @@
 package ar.com.indexer.dao;
 
-import java.sql.Date;
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.dao.IncorrectResultSizeDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import ar.com.indexer.dominio.Busqueda;
-import ar.com.indexer.dto.BusquedasRestantesDTO;
 import ar.com.indexer.dto.UsuarioDTO;
 import ar.com.indexer.dto.UsuarioTemporalDTO;
-import ar.com.indexer.rowMapper.BusquedaRowMapper;
-import ar.com.indexer.rowMapper.BusquedasRestantesRowMapper;
 import ar.com.indexer.rowMapper.StringRowMapper;
 import ar.com.indexer.rowMapper.UsuarioRowMapper;
 

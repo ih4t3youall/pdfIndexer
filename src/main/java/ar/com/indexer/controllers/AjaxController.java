@@ -32,6 +32,8 @@ public class AjaxController {
 	private UsuarioDTO usuarioDTO;
 
 	private CodigosBO codigosBO;
+	
+	private ClavesController clavesController;
 
 	@RequestMapping("menuPrincipal.htm")
 	public ModelAndView menuPrincipal(ModelMap model) {
@@ -294,6 +296,24 @@ public class AjaxController {
 	}
 	
 	
+	@RequestMapping("crearMailConCodigo.htm")
+	public  ModelAndView crearMailconCodigo(String nombre){
+		
+		ModelAndView mav = new ModelAndView("usuariosTemporales/mail");
+		
+		String codigoVerificador = clavesController.alfanumerico(5, "estandard");
+		UsuarioDTO usuarioDTO = new UsuarioDTO();
+		usuarioDTO.setNombreUsuario(nombre);
+		usuarioDTO = usuarioBO.obtenerUsuarioPorNombreDeUsuario(usuarioDTO);
+		usuarioDTO.setCodigoVerificador(codigoVerificador);
+		mav.addObject("usuarioDTO",usuarioDTO);
+	
+		
+		return mav;
+		
+	}
+	
+	
 
 	@RequestMapping("eliminarUsuario.htm")
 	public @ResponseBody
@@ -344,5 +364,15 @@ public class AjaxController {
 	public void setCodigosBO(CodigosBO codigosBO) {
 		this.codigosBO = codigosBO;
 	}
+
+	public ClavesController getClavesController() {
+		return clavesController;
+	}
+
+	public void setClavesController(ClavesController clavesController) {
+		this.clavesController = clavesController;
+	}
+	
+	
 
 }

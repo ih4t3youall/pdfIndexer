@@ -73,6 +73,7 @@
 		<property name="usuarioBO" ref="usuarioBO" />
 		<property name="usuarioDTO" ref="usuarioDTO"></property>
 		<property name="codigosBO" ref="codigosBO"></property>
+		<property name="clavesController" ref="clavesController"></property>
 	</bean>
 	<bean id="landingController" class="ar.com.indexer.controllers.LandingController">
 		<property name="conf" ref="configuracion"></property>

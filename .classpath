@@ -53,6 +53,6 @@
 	<classpathentry kind="var" path="M2_REPO/com/lowagie/itext/2.0.7/itext-2.0.7.jar"/>
 	<classpathentry kind="var" path="M2_REPO/bouncycastle/bcmail-jdk14/138/bcmail-jdk14-138.jar"/>
 	<classpathentry kind="var" path="M2_REPO/bouncycastle/bcprov-jdk14/138/bcprov-jdk14-138.jar"/>
-	<classpathentry kind="lib" path="/home/ubuntu/githubAcomodo/pdfIndexer/src/main/resources/pdf-renderer-1.0.5.jar"/>
+	<classpathentry kind="lib" path="/home/ubuntu/workspacePdfIndexerGitHub/pdfIndexer/src/main/resources/pdf-renderer-1.0.5.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

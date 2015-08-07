@@ -34,6 +34,12 @@ public class UsuarioBO {
 		
 	}
 	
+	public UsuarioDTO obtenerUsuarioPorNombreDeUsuario(UsuarioDTO usuarioDTO){
+		
+		
+		return usuarioDAO.getUsuarioByUsername(usuarioDTO.getNombreUsuario());
+		
+	}
 	
 	public void verificarUsuario(UsuarioDTO usuarioDTO) throws UsuarioException {
 	
