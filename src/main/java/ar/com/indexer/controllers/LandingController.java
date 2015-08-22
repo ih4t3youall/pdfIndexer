@@ -26,38 +26,47 @@ public class LandingController {
 	private BcpBO bcpBO;
 
 	@RequestMapping("pruebe.htm")
-	public @ResponseBody
-	String pruebe() {
-		String texto = "";
-		try {
-			texto = leerArchivo("textoPruebe.txt");
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-		return texto;
+	public ModelAndView pruebe() {
+		ModelAndView  mav = new ModelAndView("fueraLogin/pruebe");
+		
+		return mav;
 
 	}
+	
+	@RequestMapping("comoFunciona.htm")
+	public ModelAndView comoFunciona(){
+		
+		ModelAndView mav = new ModelAndView("fueraLogin/comoFunciona");
+		return mav;
+		
+		
+	}
+	
+	@RequestMapping("conectese.htm")
+	public ModelAndView conectese(){
+		
+		ModelAndView mav = new ModelAndView("login/inicio");
+		
+		return mav;
+		
+	}
+	
+	@RequestMapping("bienvenido.htm")
+	public ModelAndView bienvenido(){
+		
+		ModelAndView mav = new ModelAndView("fueraLogin/bienvenido");
+		return mav;
+		
+	}
+	
+	
 
 	@RequestMapping("pruebeDerecha.htm")
-	public @ResponseBody
-	String pruebeDerecha() {
-		String texto = "";
-		try {
-			texto = leerArchivo("textoPruebeDerecha.txt");
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	public 
+	ModelAndView pruebeDerecha() {
+		ModelAndView mav = new ModelAndView("fueraLogin/pruebaDerecha");
 
-		return texto;
+		return mav;
 
 	}
 	
@@ -84,6 +93,13 @@ public class LandingController {
 		
 	}
 	
+	
+	@RequestMapping("porqueEtracking.htm")
+	public ModelAndView porqueEtracking(){
+		ModelAndView mav = new ModelAndView("fueraLogin/porqueEtracking");
+		return mav;
+		
+	}
 	
 	@RequestMapping("compre.htm")
 	public ModelAndView compre(){

@@ -28,7 +28,7 @@ public class LoginController {
 	@RequestMapping(value="/login.htm", method = RequestMethod.GET)
 	public ModelAndView login(ModelMap model) {
  
-		ModelAndView mav = new ModelAndView("/login/login");
+		ModelAndView mav = new ModelAndView("/fueraLogin/landingPage");
 		return mav;
  
 	}
@@ -36,7 +36,7 @@ public class LoginController {
 	@RequestMapping(value="/loginfailed.htm", method = RequestMethod.GET)
 	public ModelAndView loginerror(ModelMap model) {
  
-		ModelAndView mav = new ModelAndView("/login/login");
+		ModelAndView mav = new ModelAndView("login/inicio");
 		mav.addObject("error","true");
 		return mav;
  

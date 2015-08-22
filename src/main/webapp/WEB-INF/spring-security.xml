@@ -20,6 +20,11 @@
 		<intercept-url pattern="/crearCuentaConClaveLogin.htm" access="ROLE_ANONYMOUS" />
 		<intercept-url pattern="/compre.htm" access="ROLE_ANONYMOUS" />
 		<intercept-url pattern="/regristoConBcp.htm" access="ROLE_ANONYMOUS" />
+		<intercept-url pattern="/porqueEtracking.htm" access="ROLE_ANONYMOUS" />
+		<intercept-url pattern="/comoFunciona.htm" access="ROLE_ANONYMOUS" />
+		<intercept-url pattern="/bienvenido.htm" access="ROLE_ANONYMOUS" />
+		<intercept-url pattern="/conectese.htm" access="ROLE_ANONYMOUS" />
+		
 		
 		<intercept-url pattern="/*" access="ROLE_USER" />
 		<intercept-url pattern="/admin*" access="ROLE_ADMIN"/>
