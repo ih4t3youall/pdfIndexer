@@ -47,12 +47,13 @@ span {
 
 #left {
 	float: left;
-	background: blue
+	padding-left: 354px;
+	width: 825px;
 }
 
 #right {
 	float: right;
-	background: red
+	padding-top: 80px;
 }
 </style>
 
@@ -173,14 +174,9 @@ span {
 		<%-- <jsp:include page="../fueraLogin/login.jsp" flush="true" /> --%>
 
 
-		<div class="container_12">
-			<div class="grid_4">
-				<p></p>
-			</div>
-
-			<div class="grid_4">
-				<div id="parrafo">
-					<form class="metro" name='f'
+		<div id="contenedorSecundario">
+	<div id="left">
+		<form class="metro" name='f'
 						action="<c:url value='j_spring_security_check' />" method='POST'>
 
 						<a href="pedirClave.htm"><img style="width: 310px"
@@ -206,20 +202,12 @@ span {
 							href="crearCuenta.htm">Crear cuenta</a></label>
 				</div>
 				</form>
-			</div>
+	</div>
+	<div id="right">
+		<img src="resources/imagenes/pantallasNuevoMenu/diarioConBarra.png" />
+	</div>
+</div>
 
-
-
-			<div id="derecha" class="grid_4">
-				<br /> <br /> <br /> <br /> <img
-					src="resources/imagenes/pantallasNuevoMenu/diarioConBarra.png" />
-
-
-			</div>
-
-
-
-		</div>
 	</div>
 
 </body>
