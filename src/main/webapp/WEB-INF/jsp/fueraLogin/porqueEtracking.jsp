@@ -27,7 +27,7 @@
         Porque eTracking es estar oportunamente informado.</p>
 	</div>
 	<div id="right">
-		<img src="resources/imagenes/pantallasNuevoMenu/diarioConBarra.png" />
+		<img id="imagen"src="resources/imagenes/pantallasNuevoMenu/diarioConBarra.png" />
 	</div>
 </div>
 

@@ -39,7 +39,11 @@
 span {
 	color: #208DFF;
 }
-
+#imagen {
+	height: 400px;
+	important
+	!
+}
 #acomodaRegistro {
 	height: 30px;
 	padding-left: 29px;
@@ -204,7 +208,7 @@ span {
 				</form>
 	</div>
 	<div id="right">
-		<img src="resources/imagenes/pantallasNuevoMenu/diarioConBarra.png" />
+		<img id="imagen" src="resources/imagenes/pantallasNuevoMenu/diarioConBarra.png" />
 	</div>
 </div>
 

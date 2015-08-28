@@ -35,7 +35,7 @@
 			inmediatez, rigurosidad y la enorme cantidad de páginas a leer que
 			exige la revisión de TODO lo que publican, hacen de este trabajo algo
 			imposible de realizar con precisión y rapidez. Por ello, eTracking®
-			le ofrece un motor de búsqueda con el que podrá podrá encontrar en
+			le ofrece un motor de búsqueda con el que podrá encontrar en
 			cuestión de segundos, todo lo que periódicos y revistas digan sobre
 			marcas, empresas, temas o personas de su interés.</p>
 
@@ -46,7 +46,7 @@
 			eTracking.</p>
 	</div>
 	<div id="right">
-		<img src="resources/imagenes/pantallasNuevoMenu/diarioConBarra.png" />
+		<img id="imagen" src="resources/imagenes/pantallasNuevoMenu/diarioConBarra.png" />
 	</div>
 </div>
 

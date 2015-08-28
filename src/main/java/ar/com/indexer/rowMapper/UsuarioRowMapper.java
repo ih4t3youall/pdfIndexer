@@ -10,7 +10,6 @@ import ar.com.indexer.dto.UsuarioDTO;
 
 public class UsuarioRowMapper implements RowMapper<UsuarioDTO> {
 
-	@Override
 	public UsuarioDTO mapRow(ResultSet rs, int index) throws SQLException {
 		
 		UsuarioDTO usuario =  new UsuarioDTO();

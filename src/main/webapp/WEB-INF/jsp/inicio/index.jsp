@@ -266,6 +266,22 @@
 		
 		
 	}
+	
+	function eliminarArchivos(){
+		
+		
+		esconder();
+		$('#contenedor_secundario').empty();
+		$.ajax({
+
+			url : "eliminarArchivos.htm",
+			context : document.body
+		}).done(function(response) {
+			$("#contenedor_secundario").html(response);
+		});
+		
+		
+	}
 
 	function agregarUsuario() {
 		esconder();
@@ -358,6 +374,7 @@
 							<li><a class="dropdown-toggle" href="#">Archivos</a>
 								<ul data-role="dropdown" class="dropdown-menu ">
 									<li><a onclick="upload()"> Subir archivos</a></li>
+									<li><a onclick="eliminarArchivos()"> Eliminar Archivos</a></li>
 									<li><a onclick="aceptarArchivos()">Aceptar Archivos</a></li>
 <!-- 									<li><a onclick="eliminarArchivos()">Eliminar archivos</a></li> -->
 									<li><a onclick="agregarUsuario();">Agregar Usuario</a></li>

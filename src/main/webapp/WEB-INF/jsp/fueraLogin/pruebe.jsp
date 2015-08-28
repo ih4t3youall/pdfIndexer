@@ -21,9 +21,15 @@
 
 <div id="contenedorSecundario">
 	<div id="left">
-<p>Haga click en <span onclick="pedirCodigo()" >"Aqui"</span> o del lado derecho y a vuelta de correo recibira un codigo de inscripcion con el que podra darse de alta en esta misma pagina.
-Este prosceso puede demorar hasta 24Hs.Una ves recibido su codigo de inscripcion vuelva a esta seccion y haga click en <span>"crear cuenta"</span> y complete el formulario de cuenta.
-Su cuenta de prueba tiene una duracion de cinco dias y le permitira realizar 5 busquedas diaraias.Buena suerte!</p>
+	
+	
+	<p>   Haga click en <span onclick="pedirCodigo()" >"Aqui"</span>  del lado derecho y a vuelta de correo recibirá un código de inscripcion con el que podrá darse de alta en esta misma página. 
+Este prosceso puede demorar hasta 24Hs.</p>
+<p>   Una ves recibido su código de inscripción vuelva a esta sección y haga click en "crear cuenta" del lado derecho y complete el formulario de cuenta. 
+Su cuenta de prueba tiene una duración de cinco días y le permitirá realizar 5 busquedas diarias en un solo medio.</p>
+<p>   Buena suerte!</p>
+
+	
 	</div>
 	<div id="right" >
 <img id="imagen" src="resources/imagenes/pantallasNuevoMenu/diarioBarraAqui.png" usemap="#Map"/>
