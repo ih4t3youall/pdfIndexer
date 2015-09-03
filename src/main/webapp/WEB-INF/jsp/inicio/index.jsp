@@ -197,24 +197,6 @@
 
 	}
 
-	function eliminarArchivos() {
-
-		esconder();
-		$.ajax({
-			type : "POST",
-			traditional : true,
-			url : "listarArchivos.htm",
-
-			success : function(response) {
-				$("#contenedor_secundario").html(response);
-
-			},
-			error : function(e) {
-				alert('Error: ' + e);
-			}
-		});
-
-	}
 
 	function opciones() {
 		esconder();

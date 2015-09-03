@@ -34,6 +34,8 @@ public class AjaxController {
 	private CodigosBO codigosBO;
 	
 	private ClavesController clavesController;
+	
+	private ArchivosController archivosController;
 
 	@RequestMapping("menuPrincipal.htm")
 	public ModelAndView menuPrincipal(ModelMap model) {
@@ -276,6 +278,68 @@ public class AjaxController {
 
 	}
 
+	
+	@RequestMapping("eliminarArchivos.htm")
+	public ModelAndView eliminarArchivos(){
+		ModelAndView mav = new ModelAndView("eliminarArchivos/eliminarArchivos");
+		File[] listarDirectorios = archivosController.listarDirectorios("");
+		mav.addObject("files",listarDirectorios);
+		
+		
+		
+		return mav;
+		
+		
+	}
+	@RequestMapping("listarArchivosEndirectorio.htm")
+	public ModelAndView listarArchivosEndirectorio(String path){
+		ModelAndView mav = new ModelAndView("eliminarArchivos/archivosEnDirectorio");
+		File[] listarDirectorios = archivosController.listarDirectorios(path);
+		String [] archivosEnDirectorio = new String[listarDirectorios.length];
+		for(int i =0; i< listarDirectorios.length;i++){
+			
+			archivosEnDirectorio[i]=listarDirectorios[i].getName();
+			
+		}
+		
+		mav.addObject("files",archivosEnDirectorio);
+		mav.addObject("path",path);
+		
+		
+		
+		return mav;
+		
+		
+	}
+	//elimina fisicamente el archivo
+	@RequestMapping("eliminarArchivo.htm")
+	public String eliminarArchivo(String nombreArchivo,String carpeta){
+		File archivo = new File(conf.getPATH_BASE()+carpeta+"/"+nombreArchivo);
+		boolean delete = archivo.delete();
+		
+		
+		if (delete) {
+			return "fue un exito";
+		}else{
+			
+		return "algo paso y no se pudo borrar";
+		}
+		
+//		return mav;
+		
+		
+	}
+	@RequestMapping("eliminarDirectorio.htm")
+	public String eliminarDirectorio(String path){
+		
+		File file =  new File(conf.getPATH_BASE()+path);
+		archivosController.eliminarDirectorio(file);
+		
+		
+		return "";
+		
+	}
+	
 	@RequestMapping("verClavesNoUtilizadas.htm")
 	public ModelAndView verClavesNoUtilizadas() {
 
@@ -372,6 +436,16 @@ public class AjaxController {
 	public void setClavesController(ClavesController clavesController) {
 		this.clavesController = clavesController;
 	}
+
+	public ArchivosController getArchivosController() {
+		return archivosController;
+	}
+
+	public void setArchivosController(ArchivosController archivosController) {
+		this.archivosController = archivosController;
+	}
+	
+	
 	
 	
 

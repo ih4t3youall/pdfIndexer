@@ -144,6 +144,36 @@ public class ArchivosController {
 
 		return listaString;
 	}
+	
+	//sin parametro devuelve las carpetas con parametro devueve los archivos dentro de la carpeta seleccionada
+	public File[] listarDirectorios(String path){
+		File directorio;
+		if(path.equals("")){
+		
+		directorio = new File(conf.getPATH_BASE());
+		}else{
+		directorio = new File(conf.getPATH_BASE()+path);	
+			
+			
+		}
+		File[] listFiles = directorio.listFiles();
+		return listFiles;
+	}
+	
+	public void eliminarDirectorio(File archivo){
+		
+		File[] listFiles = archivo.listFiles();
+		
+		
+		for (File file : listFiles) {
+			file.delete();
+		}
+		
+		archivo.delete();
+		
+	}
+	
+	
 
 	public ArchivosBO getArchivosBO() {
 		return archivosBO;
