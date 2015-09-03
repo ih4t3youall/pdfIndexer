@@ -9,6 +9,7 @@
 	float: left;
 	padding-left: 354px;
 	width: 825px;
+	padding-top: 41px;
 }
 
 #right {

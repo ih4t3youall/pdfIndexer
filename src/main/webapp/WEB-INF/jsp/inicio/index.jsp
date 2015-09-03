@@ -353,10 +353,11 @@
 				<li><a href="#" class="dropdown-toggle">Buscar</a>
 					<ul data-role="dropdown" class="dropdown-menu ">
 						<li><a onclick="lupa();">Buscar en diarios</a></li>
-						<li><a class="dropdown-toggle">Busquedas anteriores</a>
-							<ul data-role="dropdown" class="dropdown-menu ">
-								<li><a onClick="resultadoHistorico()">Historico</a></li>
-							</ul></li>
+<!-- 						<li><a class="dropdown-toggle">Busquedas anteriores</a> -->
+<!-- 							<ul data-role="dropdown" class="dropdown-menu "> -->
+<!-- 								<li><a onClick="resultadoHistorico()">Historico</a></li> -->
+<!-- 							</ul> -->
+<!-- 							</li> -->
 					</ul></li>
 
 				<li><a href="#" class="dropdown-toggle">Usuario</a>

@@ -44,6 +44,9 @@ span {
 	height: 30px;
 	padding-left: 29px;
 }
+
+P { text-indent: 15px }
+
 </style>
 
 <script>

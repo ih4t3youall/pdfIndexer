@@ -53,12 +53,14 @@ span {
 	float: left;
 	padding-left: 354px;
 	width: 825px;
+	padding-top:73px;
 }
 
 #right {
 	float: right;
 	padding-top: 80px;
 }
+P { text-indent: 15px }
 </style>
 
 <script>
@@ -211,6 +213,13 @@ span {
 		<img id="imagen" src="resources/imagenes/pantallasNuevoMenu/diarioConBarra.png" />
 	</div>
 </div>
+
+	</div>
+	<div class="clear"></div>
+	<div class="container_12">
+		<div class="grid_12">
+			<img src="resources/imagenes/login/footer.png" alt="Smiley face"></a>
+		</div>
 
 	</div>
 
