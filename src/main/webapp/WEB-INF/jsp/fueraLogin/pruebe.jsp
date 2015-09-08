@@ -22,7 +22,6 @@ a{color:blue;}
 
 <div class="clear"></div>
 
-<div id="contenedorSecundario">
 	<div id="left">
 	
 	<p>Haga click <a href="pedirClave.htm">AQUÍ</a>, complete el formulario y a vuelta de correo recibirá un código de inscripción con el que podrá darse de alta en esta misma página.
@@ -41,4 +40,3 @@ Su cuenta de prueba tiene una duración de cinco días y le permitirá hacer hasta 
 <area  href="crearCuentaConClaveLogin.htm"  coords="60,120,270,150" shape="rect">
 </map>
 	</div>
-</div>

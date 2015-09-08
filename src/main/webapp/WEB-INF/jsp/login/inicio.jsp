@@ -21,6 +21,11 @@
 	padding-left: 162px;
 }
 
+#contenedorSecundario{
+width:1300px;
+
+}
+
 #navegador li {
 	display: inline;
 	text-align: center;
@@ -171,7 +176,6 @@ P { text-indent: 15px }
 	<div class="clear"></div>
 
 
-	<div id="contenedorSecundario">
 
 
 
@@ -208,13 +212,12 @@ P { text-indent: 15px }
 							href="crearCuenta.htm">Crear cuenta</a></label>
 				</div>
 				</form>
-	</div>
+	
 	<div id="right">
 		<img id="imagen" src="resources/imagenes/pantallasNuevoMenu/diarioConBarra.png" />
 	</div>
 </div>
 
-	</div>
 	<div class="clear"></div>
 	<div class="container_12">
 		<div class="grid_12">

@@ -19,7 +19,6 @@
 </style>
 
 <div class="clear"></div>
-<div id="contenedorSecundario">
 	<div id="left">
 	
 	
@@ -43,6 +42,5 @@ o personas de su interés.</p>
 	<div id="right">
 		<img id="imagen" src="resources/imagenes/pantallasNuevoMenu/diarioConBarra.png" />
 	</div>
-</div>
 
 

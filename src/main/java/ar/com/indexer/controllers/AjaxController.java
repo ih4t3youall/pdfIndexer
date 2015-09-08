@@ -313,16 +313,16 @@ public class AjaxController {
 	}
 	//elimina fisicamente el archivo
 	@RequestMapping("eliminarArchivo.htm")
-	public String eliminarArchivo(String nombreArchivo,String carpeta){
+	public @ResponseBody String eliminarArchivo(String nombreArchivo,String carpeta){
 		File archivo = new File(conf.getPATH_BASE()+carpeta+"/"+nombreArchivo);
 		boolean delete = archivo.delete();
 		
 		
 		if (delete) {
-			return "fue un exito";
+			return "El archivo se elimino con exito.";
 		}else{
 			
-		return "algo paso y no se pudo borrar";
+		return "Error al eliminar el archivo.";
 		}
 		
 //		return mav;
@@ -330,13 +330,16 @@ public class AjaxController {
 		
 	}
 	@RequestMapping("eliminarDirectorio.htm")
-	public String eliminarDirectorio(String path){
+	public @ResponseBody String eliminarDirectorio(String path){
 		
 		File file =  new File(conf.getPATH_BASE()+path);
+		try{
 		archivosController.eliminarDirectorio(file);
+		}catch(Exception e){
+			return "error al eliminar el archivo";
+		}
 		
-		
-		return "";
+		return "El archivo se elimino con exito";
 		
 	}
 	
