@@ -222,4 +222,4 @@ VALUES ( 33, 'ROLE_USER');
 insert into tipo_usuario (tipo_nombre,dia,semana,mes) values ('estandard',3,3,3);
 insert into tipo_usuario (tipo_nombre,dia,semana,mes) values ('advance',6,6,6);
 insert into tipo_usuario (tipo_nombre,dia,semana,mes) values ('premium',9,9,9);
-insert into tipo_usuario (tipo_nombre,dia,semana,mes) values ('vip',999999,999999,999999);
+insert into tipo_usuario (tipo_nombre,dia,semana,mes) values ('vip',15,15,15);
